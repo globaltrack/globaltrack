@@ -19,6 +19,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetTrackableItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrackableItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ClientDataModel" minOccurs="0" name="GetTrackableItemsResult" nillable="true" type="q2:ArrayOfTrackableItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Login">
     <xs:complexType>
       <xs:sequence>
@@ -30,7 +44,7 @@
   <xs:element name="LoginResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GlobalTrackService" minOccurs="0" name="LoginResult" nillable="true" type="q2:LoginResponse" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GlobalTrackService" minOccurs="0" name="LoginResult" nillable="true" type="q3:LoginResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

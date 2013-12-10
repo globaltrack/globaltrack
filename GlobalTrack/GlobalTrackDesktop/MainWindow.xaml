@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:ui="clr-namespace:GlobalTrackDesktop.UI"
-                      Title="Global Track Desktop" Height="407" Width="800"
+                      Title="Global Track Desktop" Height="407" Width="979"
                       BorderThickness="1"
                       WindowStartupLocation="CenterScreen"
                       BorderBrush="{DynamicResource AccentColorBrush}"
@@ -33,10 +33,8 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Trackable items">
-
+                <ui:TrackableItemsView></ui:TrackableItemsView>
             </TabItem>
-
-
         </TabControl>
 
     </Grid>

@@ -36,4 +36,37 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TrackingHistoryRecord" nillable="true" type="tns:TrackingHistoryRecord" />
+  <xs:complexType name="ArrayOfTrackableItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrackableItem" nillable="true" type="tns:TrackableItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrackableItem" nillable="true" type="tns:ArrayOfTrackableItem" />
+  <xs:complexType name="TrackableItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSecured" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="States" nillable="true" type="tns:ArrayOfTrackableItemState" />
+      <xs:element minOccurs="0" name="SupportsGeolocationServices" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SupportsUserInformation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrackableItem" nillable="true" type="tns:TrackableItem" />
+  <xs:complexType name="ArrayOfTrackableItemState">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrackableItemState" nillable="true" type="tns:TrackableItemState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrackableItemState" nillable="true" type="tns:ArrayOfTrackableItemState" />
+  <xs:complexType name="TrackableItemState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrackableItemState" nillable="true" type="tns:TrackableItemState" />
 </xs:schema>

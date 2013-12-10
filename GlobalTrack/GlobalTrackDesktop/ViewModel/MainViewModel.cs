@@ -12,12 +12,15 @@ namespace GlobalTrackDesktop.ViewModel
     {
         public TrackingsListViewModel TrackingsVm { get; set; }
 
+        public TrackableItemsViewModel TrackableItemsVm { get; set; }
+
         public ICommand CreateNewTrackingCommand { get; set; }
 
         public MainViewModel()
         {
             CreateNewTrackingCommand = new DelegateCommand(CreateNewTracking, x => true);
             TrackingsVm = new TrackingsListViewModel();
+            TrackableItemsVm = new TrackableItemsViewModel();
         }
 
         private void CreateNewTracking(object obj)
