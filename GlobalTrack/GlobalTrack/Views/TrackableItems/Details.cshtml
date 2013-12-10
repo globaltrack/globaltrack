@@ -1,0 +1,81 @@
+﻿@model ServerDataModel.TrackableItem
+
+@{
+    ViewBag.Title = "Trackable Item Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TrackableItem</legend>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.Name)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.Description)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.IsSecured)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsSecured)
+    </div>
+     <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.SupportsGeolocationServices)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SupportsGeolocationServices)
+    </div>
+     <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.SupportsUserInformation)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SupportsUserInformation)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.Id }) |
+    @Html.ActionLink("Add state", "CreateState", new {id = Model.Id}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<h4>Possible States</h4>
+
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Desription
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.States) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditState", new { trackableItemId=Model.Id, stateId = item.Id}) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.Id})
+        </td>
+    </tr>
+}
+
+</table>
+

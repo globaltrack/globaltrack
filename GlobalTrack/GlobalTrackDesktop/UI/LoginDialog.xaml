@@ -1,0 +1,28 @@
+﻿<Controls:MetroWindow x:Class="GlobalTrackDesktop.UI.LoginDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      Title="LoginDialog" Height="140" Width="410"
+                       BorderThickness="1"
+                      WindowStartupLocation="CenterScreen"
+                      BorderBrush="{DynamicResource AccentColorBrush}"
+                      >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="271*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="User name" Grid.Column="0" Grid.Row="0" Margin="5,5,5,5"></Label>
+        <TextBox x:Name ="TbUser"  Grid.Column="1" Grid.Row="0" Margin="5,5,5,5" Text="Alexey"></TextBox>
+        <Label Content="Password" Grid.Column="0" Grid.Row="1" Margin="5,5,5,5"></Label>
+        <TextBox x:Name ="TbPassword" Grid.Column="1" Grid.Row="1" Margin="5,5,5,5" Text="volga613"></TextBox>
+        <Button Grid.Column="1" Grid.Row="2" Content="Cancel" Margin="10,5,161,5"/>
+        <Button Grid.Column="1" Grid.Row="2" Content="OK"  Margin="166,5,5,5" Click="OnLogin" />
+
+    </Grid>
+</Controls:MetroWindow>

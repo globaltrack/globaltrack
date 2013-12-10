@@ -1,0 +1,97 @@
+﻿@model PagedList.IPagedList<GlobalTrack.Models.ServerDataModel.TrackingViewModel>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "All trackings";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@using (Html.BeginForm("Index", "Tracking", FormMethod.Post))
+{
+    
+    
+    <p>
+       
+        <h3>Filter</h3> 
+        
+        <table>
+            
+            <tr>
+                <td>Date from</td>
+                <td>
+                    @*<input type="text" id="startDate" name="datepicker" class="datepicker" style="width: 100px" />*@
+                    @Html.TextBox("startDate","", new {  @readonly="readonly" , @class = "dateTime"})  
+                </td> 
+            </tr>
+            <tr>
+                <td>Date to
+                </td>
+                <td>
+                    @Html.TextBox("endDate","", new {  @readonly="readonly" , @class = "dateTime"})  
+                </td>
+            </tr>
+        </table>
+        <h3>Search in</h3>
+        @Html.CheckBox("searchInUserInfo", (bool)ViewBag.SearchInUserInfo) User Information
+        @Html.CheckBox("searchInHistory", (bool)ViewBag.SearchInHistory) Comments
+        @Html.CheckBox("searchInTrackingNumber", (bool)ViewBag.SearchInTrackingNumber) Tracking number
+        <br/>
+        @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<table class="imagetable">
+    <tr>
+        <th>
+            Tracking Number
+            @*@Html.DisplayNameFor(model => model[0].TrackingNumber)*@
+        </th>
+        <th>
+            Created
+            @*@Html.DisplayNameFor(model => model.User)*@
+        </th>
+
+
+        <th>
+            Comment
+            @*@Html.DisplayNameFor(model => model.Comment)*@
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.TrackingNumber)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) |
+            @Html.ActionLink("Track", "TrackingDetails","PublicTracking",  new {  trackingId=item.Id }, new {}) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.Id})
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, /* sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter*/ }))
+

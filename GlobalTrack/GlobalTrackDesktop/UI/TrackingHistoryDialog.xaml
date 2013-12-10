@@ -1,0 +1,20 @@
+﻿<Controls:MetroWindow x:Class="GlobalTrackDesktop.UI.TrackingHistoryDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:ui="clr-namespace:GlobalTrackDesktop.UI"
+                      Title="TrackingHistoryDialog" Height="332" Width="530" 
+                       BorderThickness="1"
+                      WindowStartupLocation="CenterScreen"
+                      BorderBrush="{DynamicResource AccentColorBrush}"
+                      >
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ui:TrackingView Grid.Row="0" HorizontalAlignment="Left" ></ui:TrackingView>
+            <ui:TrackingHistory Grid.Row="1" Grid.ColumnSpan="2" />
+        </Grid>
+</Controls:MetroWindow>

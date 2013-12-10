@@ -1,0 +1,75 @@
+﻿@model ServerDataModel.TrackableItem
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TrackableItem</legend>
+       
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserId)
+            @Html.ValidationMessageFor(model => model.UserId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsSecured)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsSecured)
+            @Html.ValidationMessageFor(model => model.IsSecured)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SupportsGeolocationServices)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SupportsGeolocationServices)
+            @Html.ValidationMessageFor(model => model.SupportsGeolocationServices)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SupportsUserInformation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SupportsUserInformation)
+            @Html.ValidationMessageFor(model => model.SupportsUserInformation)
+        </div>
+
+        
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

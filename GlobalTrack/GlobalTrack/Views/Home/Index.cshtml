@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Global Track";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            @*<p>
+                To learn more about ASP.NET MVC visit
+                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                If you have any questions about ASP.NET MVC visit
+                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+            </p>*@
+        </div>
+    </section>
+}
+<h3>For users - we suggest the following:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Track your items</h5>
+        Just navigate to the  "Track" link in the header menu, enter a valid tracking number and get the status of your deal!  
+        @Html.ActionLink("Track", "Index", "PublicTracking") 
+    </li>
+</ol>
+
+<h3>For service providers - we suggest the following:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Getting Started</h5>
+        See the demo videos how to create your account, configure trackable items and states, share items with your subscribers  
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
+    </li>
+
+    <li class="two">
+        <h5>Register</h5>
+        Register at the Golbal Track site. After you register you will be able to create trackings and share them with your subscribers.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
+    </li>
+
+    <li class="three">
+        <h5>Configure your environment</h5>
+        Confugure your environment with defining trackable items. For any trackable item, define the set of additional services, like gelocation, QR-Codes, etc.  
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
+    </li>
+    <li class="four">
+        <h5>Share your items with your subscribers</h5>
+        Start using your trackable items by creating new trackings. Share your trackings with your subscribers allowing them easily track the status of your trackings
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
+    </li>
+</ol>

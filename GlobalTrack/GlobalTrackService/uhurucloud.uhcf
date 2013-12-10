@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<CloudApplication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Deployable="true" Memory="256" InstanceCount="1" Name="GlobalTrackService" Framework="dotNet" Runtime="iis" xmlns="http://tempuri.org/PackageSchema.xsd">
+  <PackageFile>F:\dev\UnOfficial\GlobalTrack\GlobalTrack\GlobalTrackService\uhurucloud.uhcf</PackageFile>
+  <Services ServiceName="GlobalTrackDB" ServiceType="mongodb" OverwriteExisting="false" />
+  <Urls>globaltrackservice.uhurucloud.com</Urls>
+  <DeploymentPath>F:\dev\UnOfficial\GlobalTrack\GlobalTrack\GlobalTrackService</DeploymentPath>
+</CloudApplication>

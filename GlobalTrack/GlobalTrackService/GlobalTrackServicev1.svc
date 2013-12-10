@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="GlobalTrackService.GlobalTrackServicev1" CodeBehind="GlobalTrackServicev1.svc.cs" %>

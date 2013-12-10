@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Global Track</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("Global Track - track everything", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Track", "Index", "PublicTracking")</li>
+                            <li>@Html.ActionLink("Control Panel", "Index", "ControlPanel")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div>
+            @* language 
+                @using (Html.BeginForm("ChangeCulture", "Home"))
+                { 
+                    <select name="lang"  onchange="this.form.submit()">
+                        <option disabled selected>@Resources.Resource.ChooseLang</option>
+                        <option value="ru-RU">Русский</option>
+                        <option value="en-US">English</option>
+                        <option value="de-DE">Deutsch</option>
+                    </select>
+                }
+                *@
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - GlobalTrack - Alexey Dubovenko</p> 
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        <!--стили jquery ui-->
+    @Styles.Render("~/Content/themes/base/css")
+    <!--сама библиотека jquey ui-->
+    @Scripts.Render("~/bundles/jqueryui")
+
+        @RenderSection("scripts", required: false)
+        <script type="text/javascript">
+     $(document).ready(function() {
+         $("#startDate").datepicker({
+             dateFormat: 'dd/mm/yy',
+             showOn: 'both',
+             buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+             buttonImageOnly: true,
+             showmonth: true,
+             autoSize: true,
+             showAnim: 'slideDown',
+             duration: 'fast'
+         });
+     });
+     $(document).ready(function () {
+         $("#endDate").datepicker({
+             dateFormat: 'dd/mm/yy',
+             showOn: 'both',
+             buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+             buttonImageOnly: true,
+             showmonth: true,
+             autoSize: true,
+             showAnim: 'slideDown',
+             duration: 'fast'
+         });
+     });
+ </script> 
+              
+    </body>
+</html>

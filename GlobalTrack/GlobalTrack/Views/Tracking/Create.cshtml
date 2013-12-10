@@ -1,0 +1,80 @@
+﻿@using MongoDB.Bson
+@model GlobalTrack.Models.ServerDataModel.TrackingViewModel
+
+@{
+    ViewBag.Title = "Create";
+    
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm(new { trackingId = Model.Id }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Tracking</legend>
+        @Html.DropDownListFor(model => model.TrackingItemId, new SelectList(Model.TrackingItems, "Value", "Text"), "Select trackable item")
+        @Html.DropDownListFor(model => model.StateId, new SelectList(Model.TrackingItemStates, "Value", "Text"), "Select initial state")
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TrackingNumber) <h3>@Html.DisplayFor(model => model.TrackingNumber)</h3> 
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Comment)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Comment)
+            @Html.ValidationMessageFor(model => model.Comment)
+        </div>
+        <div id="customerInfoSection">
+            
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CustomerInformation)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CustomerInformation)
+            @Html.ValidationMessageFor(model => model.CustomerInformation)
+        </div>
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    
+    <script type="text/javascript">
+        $(function() {
+            $("#TrackingItemId").change(function() {
+                var self = $(this);
+                var items = "";
+                $.getJSON("@Url.Action("GetTrackingItemStates", "Tracking")/" + self.val(),
+                    function(data) {
+                        $.each(data.itemStates, function(index, item) {
+                            items += "<option value='" + item.Value + "'>" + item.Text
+                                + "</option>";
+                        });
+                        $("#StateId").html(items);
+                        if (data.supportCustomerInfo == true) {
+                            $("div#customerInfoSection").show();
+                        } else {
+                            $("div#customerInfoSection").hide();
+                        }
+
+                    });
+            });
+        });    
+
+    </script>
+}

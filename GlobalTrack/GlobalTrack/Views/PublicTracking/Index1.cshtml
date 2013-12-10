@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using(Html.BeginForm("Search")){
+     @Html.TextBox("trackingId", "")
+     @Html.ValidateFor()
+     <input type="submit" value="Search" />
+}
