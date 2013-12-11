@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
+using ClientDataModel;
 using GlobalTrackDesktop.Core;
 using GlobalTrackDesktop.GlobalTrackService;
 using GlobalTrackDesktop.UI;
@@ -35,6 +36,8 @@ namespace GlobalTrackDesktop.ViewModel
             {
                 TrackableItems = new ObservableCollection<TrackableItem>();
                 IList<TrackableItem> items = service.GetTrackableItems(UserContext.Session);
+              
+
                 foreach (var item in items)
                     TrackableItems.Add(item);
             }
@@ -47,7 +50,8 @@ namespace GlobalTrackDesktop.ViewModel
 
         private void EditStates(object obj)
         {
-            MessageBox.Show("Edit states pressed"); 
+            TrackableItemDialog dlg = new TrackableItemDialog( new TrackableItemViewModel(obj as TrackableItem));
+            dlg.ShowDialog(); 
         }
     }
 }

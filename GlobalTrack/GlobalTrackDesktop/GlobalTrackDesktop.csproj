@@ -43,7 +43,6 @@
     <StartupObject>GlobalTrackDesktop.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClientDataModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="MahApps.Metro, Version=0.11.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\MahApps.Metro.dll</HintPath>
@@ -87,8 +86,14 @@
     <Compile Include="UI\LoginDialog.xaml.cs">
       <DependentUpon>LoginDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\TrackableItemDialog.xaml.cs">
+      <DependentUpon>TrackableItemDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\TrackableItemsView.xaml.cs">
       <DependentUpon>TrackableItemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrackableItemView.xaml.cs">
+      <DependentUpon>TrackableItemView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\TrackingView.xaml.cs">
       <DependentUpon>TrackingView.xaml</DependentUpon>
@@ -104,6 +109,7 @@
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\TrackableItemsViewModel.cs" />
+    <Compile Include="ViewModel\TrackableItemViewModel.cs" />
     <Compile Include="ViewModel\TrackingHistoryViewModel.cs" />
     <Compile Include="ViewModel\TrackingsListViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
@@ -123,7 +129,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\TrackableItemDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\TrackableItemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TrackableItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,6 +177,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\ClientDataModel.TrackableItem.datasource" />
     <None Include="Properties\DataSources\ClientDataModel.Tracking.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -170,9 +185,6 @@
     </None>
     <AppDesigner Include="Properties\" />
     <None Include="Service References\GlobalTrackService\GlobalTrackDesktop.GlobalTrackService.LoginResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\GlobalTrackService\GlobalTrackDesktop.GlobalTrackService.TrackableItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\GlobalTrackService\GlobalTrackServicev1.wsdl" />
@@ -190,16 +202,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClientDataModel\ClientDataModel.csproj">
-      <Project>{ad8943ca-2518-4dca-9140-79baa8804c7e}</Project>
-      <Name>ClientDataModel %28ClientDataModel\ClientDataModel%29</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\1386692539_17275.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1386692539_17275.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClientDataModel\ClientDataModel.csproj">
+      <Project>{ad8943ca-2518-4dca-9140-79baa8804c7e}</Project>
+      <Name>ClientDataModel %28ClientDataModel\ClientDataModel%29</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\GlobalTrackService\" />
@@ -218,12 +236,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Images\1386692539_17275.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="1386692539_17275.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

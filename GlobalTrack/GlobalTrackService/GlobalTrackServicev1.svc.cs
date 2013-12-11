@@ -75,7 +75,7 @@ namespace GlobalTrackService
              }).ToList(); 
         }
 
-        public IList<TrackableItem> GetTrackableItems(string sessionId)
+       public IList<ClientDataModel.TrackableItem> GetTrackableItems(string sessionId)
         {
            if (!ValidateUser(sessionId))
                throw new Exception("Not authorized");

@@ -1,0 +1,17 @@
+﻿<Controls:MetroWindow x:Class="GlobalTrackDesktop.UI.TrackableItemDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:ui="clr-namespace:GlobalTrackDesktop.UI"
+                      Title="TrackableItemDialog" Height="517" Width="565">
+
+    <Grid>
+        <ui:TrackableItemView VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></ui:TrackableItemView>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" >
+                <Button Content="Save" Margin="5"></Button>
+                <Button Content="Cancel" Margin="5"></Button>
+            </StackPanel>
+        </Grid>
+        
+
+</Controls:MetroWindow>

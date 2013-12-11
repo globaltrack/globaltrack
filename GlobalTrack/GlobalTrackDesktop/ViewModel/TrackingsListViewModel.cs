@@ -25,7 +25,7 @@ namespace GlobalTrackDesktop.ViewModel
             service = UserContext.Service;
             try
             {
-                IList<Tracking> items = service.GetTrackings(UserContext.Session, null, null, "");
+                IList<ClientDataModel.Tracking> items = service.GetTrackings(UserContext.Session, null, null, "");
                 Trackings = new ObservableCollection<Tracking>();
 
                 foreach (var item in items)
