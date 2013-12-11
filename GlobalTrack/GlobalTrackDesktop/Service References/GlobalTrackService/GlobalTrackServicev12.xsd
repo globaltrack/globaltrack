@@ -1,51 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://globaltrackservice.uhurucloud.com/GlobalTrackServicev1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ClientDataModel" />
-  <xs:import schemaLocation="http://globaltrackservice.uhurucloud.com/GlobalTrackServicev1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GlobalTrackService" />
-  <xs:element name="GetTrackings">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="from" nillable="true" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="to" nillable="true" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="searchString" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetTrackingsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ClientDataModel" minOccurs="0" name="GetTrackingsResult" nillable="true" type="q1:ArrayOfTracking" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetTrackableItems">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetTrackableItemsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ClientDataModel" minOccurs="0" name="GetTrackableItemsResult" nillable="true" type="q2:ArrayOfTrackableItem" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Login">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="LoginResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GlobalTrackService" minOccurs="0" name="LoginResult" nillable="true" type="q3:LoginResponse" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GlobalTrackService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GlobalTrackService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LoginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginResponse" nillable="true" type="tns:LoginResponse" />
 </xs:schema>

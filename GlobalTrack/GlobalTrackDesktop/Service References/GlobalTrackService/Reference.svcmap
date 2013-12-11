@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b4615220-df5a-4ab8-a884-524e69e851cc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1e7be6b9-ed4b-4e6c-bc59-8121df37f826" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://globaltrackservice.uhurucloud.com/GlobalTrackServicev1.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:62978/GlobalTrackServicev1.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="GlobalTrackServicev1.xsd" MetadataType="Schema" ID="9750b811-8d6d-48d7-b212-d1c1159a6524" SourceId="1" SourceUrl="http://globaltrackservice.uhurucloud.com/GlobalTrackServicev1.svc?xsd=xsd2" />
-    <MetadataFile FileName="GlobalTrackServicev11.xsd" MetadataType="Schema" ID="cd43fc1d-30f2-432f-b90f-54876c1b4a08" SourceId="1" SourceUrl="http://globaltrackservice.uhurucloud.com/GlobalTrackServicev1.svc?xsd=xsd3" />
-    <MetadataFile FileName="GlobalTrackServicev12.xsd" MetadataType="Schema" ID="ad74a352-53f7-477e-b77f-b16b67263b8a" SourceId="1" SourceUrl="http://globaltrackservice.uhurucloud.com/GlobalTrackServicev1.svc?xsd=xsd0" />
-    <MetadataFile FileName="GlobalTrackServicev13.xsd" MetadataType="Schema" ID="0dd592d4-15d2-469e-84d9-63e37f6d4e39" SourceId="1" SourceUrl="http://globaltrackservice.uhurucloud.com/GlobalTrackServicev1.svc?xsd=xsd1" />
-    <MetadataFile FileName="GlobalTrackServicev1.disco" MetadataType="Disco" ID="06938f9e-ba37-4873-a983-3c88a490dce8" SourceId="1" SourceUrl="http://globaltrackservice.uhurucloud.com/GlobalTrackServicev1.svc?disco" />
-    <MetadataFile FileName="GlobalTrackServicev1.wsdl" MetadataType="Wsdl" ID="6c026c8e-2106-4b30-99d4-36b4361f57f8" SourceId="1" SourceUrl="http://globaltrackservice.uhurucloud.com/GlobalTrackServicev1.svc?wsdl" />
+    <MetadataFile FileName="GlobalTrackServicev1.xsd" MetadataType="Schema" ID="574f7133-7d57-47d7-91de-e745b0541547" SourceId="1" SourceUrl="http://localhost:62978/GlobalTrackServicev1.svc?xsd=xsd2" />
+    <MetadataFile FileName="GlobalTrackServicev11.xsd" MetadataType="Schema" ID="59dfb74d-f078-4f10-81f4-b4488e61963a" SourceId="1" SourceUrl="http://localhost:62978/GlobalTrackServicev1.svc?xsd=xsd0" />
+    <MetadataFile FileName="GlobalTrackServicev1.wsdl" MetadataType="Wsdl" ID="5cf612e2-809e-4560-98f4-1099985683ce" SourceId="1" SourceUrl="http://localhost:62978/GlobalTrackServicev1.svc?wsdl" />
+    <MetadataFile FileName="GlobalTrackServicev1.disco" MetadataType="Disco" ID="31a25b7f-518b-4b16-b986-94acdc97c702" SourceId="1" SourceUrl="http://localhost:62978/GlobalTrackServicev1.svc?disco" />
+    <MetadataFile FileName="GlobalTrackServicev12.xsd" MetadataType="Schema" ID="fc4587c2-e182-4c92-9149-22521a043975" SourceId="1" SourceUrl="http://localhost:62978/GlobalTrackServicev1.svc?xsd=xsd3" />
+    <MetadataFile FileName="GlobalTrackServicev13.xsd" MetadataType="Schema" ID="4399c9ff-12c8-430f-a00c-5aa911b02c7b" SourceId="1" SourceUrl="http://localhost:62978/GlobalTrackServicev1.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
