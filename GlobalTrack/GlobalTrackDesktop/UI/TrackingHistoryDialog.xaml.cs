@@ -22,8 +22,8 @@ namespace GlobalTrackDesktop.UI
         public TrackingHistoryDialog( TrackingHistoryViewModel vm)
         {
             DataContext = vm; 
-
             InitializeComponent();
+            Title = string.Format("Tracking history: {0}", vm.Tracking.TrackingNumber); 
         }
     }
 }

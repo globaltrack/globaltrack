@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" Height="auto" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+ 
     <Grid>
         <ListView ItemsSource="{Binding TrackingsVm.Trackings}"> 
             <ListView.View>
@@ -15,9 +16,9 @@
                     <GridViewColumn Header="History">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button
+                                <Button 
                        Content="Show history"
-                       Margin="0"
+                                    
                        VerticalAlignment="Center" CommandParameter="{Binding}" Command="{Binding DataContext.TrackingsVm.ShowHistoryCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}, Mode=FindAncestor}}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>

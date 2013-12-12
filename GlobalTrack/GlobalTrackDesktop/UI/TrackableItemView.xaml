@@ -31,8 +31,8 @@
             </Grid>
             <StackPanel Orientation="Horizontal">
                 <Label Content="States: " Margin="5" ></Label>
-                <Button Content="Add" Margin="5"></Button>
-                <Button Content="Remove" Margin="5"></Button>
+                <Button Content="Add" Width="50"></Button>
+                <Button Content="Remove" Width="50"></Button>
              </StackPanel>
             <Grid>
                 <ListView ItemsSource="{Binding DataSource.States}">

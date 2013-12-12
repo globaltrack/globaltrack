@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IConvertToClientData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchTracking.cs" />
     <Compile Include="SearchTrackingInfo.cs" />
@@ -57,6 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClientDataModel\ClientDataModel.csproj">
+      <Project>{ad8943ca-2518-4dca-9140-79baa8804c7e}</Project>
+      <Name>ClientDataModel %28ClientDataModel\ClientDataModel%29</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

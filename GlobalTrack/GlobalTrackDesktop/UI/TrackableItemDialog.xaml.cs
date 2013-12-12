@@ -22,7 +22,8 @@ namespace GlobalTrackDesktop.UI
         public TrackableItemDialog(TrackableItemViewModel vm )
         {
             InitializeComponent();
-            DataContext = vm; 
+            DataContext = vm;
+            Title = string.Format("Trackable Item: {0}", vm.DataSource.Name); 
         }
     }
 

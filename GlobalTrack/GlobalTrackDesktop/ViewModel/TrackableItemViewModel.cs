@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using ClientDataModel;
@@ -23,5 +24,6 @@ namespace GlobalTrackDesktop.ViewModel
             set { _dataSource = value; OnPropertyChanged("DataSource");}
         }
 
+        
     }
 }

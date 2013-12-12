@@ -36,10 +36,15 @@ namespace GlobalTrackDesktop.ViewModel
             {
                 TrackableItems = new ObservableCollection<TrackableItem>();
                 IList<TrackableItem> items = service.GetTrackableItems(UserContext.Session);
-              
-
-                foreach (var item in items)
-                    TrackableItems.Add(item);
+                
+                //initially accepting all changes at all items 
+                //TODO: think about 'how to automate this process'? 
+                items.ToList().ForEach(x =>
+                    {
+                        x.AcceptChanges();
+                        TrackableItems.Add(x);
+                    });
+                
             }
             catch (Exception)
             {

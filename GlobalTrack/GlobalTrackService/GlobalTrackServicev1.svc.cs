@@ -8,6 +8,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using ClientDataModel;
 using GlobalTrackService.Security;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 
@@ -82,26 +83,23 @@ namespace GlobalTrackService
            string userId = GetUser(sessionId);
            var tiList = _trackableItemsCollection.AsQueryable().Where(x => x.UserId == userId).ToList();
 
-            return tiList.Select(ti => new ClientDataModel.TrackableItem()
-                {
-                    Description = ti.Description,
-                    Id = ti.Id.ToString(),
-                    IsSecured = ti.IsSecured,
-                    Name = ti.Name,
-                    SupportsGeolocationServices = ti.SupportsGeolocationServices,
-                    SupportsUserInformation = ti.SupportsUserInformation,
-                    UserId = ti.UserId,
-                    States =
-                        ti.States.Select(
-                            tis =>
-                            new TrackableItemState()
-                                {
-                                    Description = tis.Description,
-                                    Id = tis.Id.ToString(),
-                                    Name = tis.Name
-                                }).ToList()
-                }).ToList(); 
+            return tiList.Select(ti => ti.ToClientData<ClientDataModel.TrackableItem>()).ToList(); 
 
+        }
+
+        public TrackableItem GetTrackableItem(string sessionId, string objectId)
+        {
+            if (!ValidateUser(sessionId))
+                throw new Exception("Not authorized");
+            string userId = GetUser(sessionId);
+            ObjectId id;
+            if (!ObjectId.TryParse(objectId, out id))
+                throw new Exception("Id format is invalid"); 
+
+
+            var ti  = _trackableItemsCollection.AsQueryable().Where(x => x.UserId == userId).FirstOrDefault(x => x.Id == id);
+            var cti = ti == null? null : ti.ToClientData<ClientDataModel.TrackableItem>();
+            return cti; 
         }
 
         public LoginResponse Login(string userName, string password)

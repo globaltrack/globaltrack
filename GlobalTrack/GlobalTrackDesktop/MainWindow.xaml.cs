@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GlobalTrackDesktop.UI;
 using GlobalTrackDesktop.ViewModel;
+using MahApps.Metro;
 using MahApps.Metro.Controls;
 
 namespace GlobalTrackDesktop
@@ -24,14 +25,13 @@ namespace GlobalTrackDesktop
     {
         public MainWindow()
         {
-            LoginDialog dlg = new LoginDialog();
-            dlg.ShowDialog();  
-
-            DataContext = new MainViewModel(); 
-
+            
+         
             InitializeComponent();
-            
-            
+            //ThemeManager.ChangeTheme(Application.Current, ThemeManager.DefaultAccents.First(x => x.Name == "Brown"), Theme.Light);
+            LoginDialog dlg = new LoginDialog();
+            dlg.ShowDialog();
+            DataContext = new MainViewModel(); 
 
         }
     }

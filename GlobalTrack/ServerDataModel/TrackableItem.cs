@@ -2,11 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-
+using System.Linq;
+using System.Linq.Expressions; 
 namespace ServerDataModel
 {
     
-    public class TrackableItem
+    public class TrackableItem : IConvertToClientData
     {
         public string UserId { get; set; }
         [BsonId]
@@ -29,6 +30,15 @@ namespace ServerDataModel
         public bool SupportsUserInformation { get; set; }
 
         public IList<TrackableItemState> States { get; set; }
+        
+        public T ToClientData<T>() where T : class
+        {
+            var t = new ClientDataModel.TrackableItem() {Description = Description, Id = Id.ToString(), IsSecured = IsSecured, Name = Name, SupportsGeolocationServices = SupportsGeolocationServices, SupportsUserInformation = SupportsUserInformation, UserId = UserId, States = new List<ClientDataModel.TrackableItemState>()};
+
+            if (States != null)
+                t.States = States.Select(x => x.ToClientData<ClientDataModel.TrackableItemState>()).ToList();
+            return t as T; 
+        }
     }
 
 }

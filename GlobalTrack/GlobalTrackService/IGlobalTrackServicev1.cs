@@ -23,6 +23,9 @@ namespace GlobalTrackService
         IList<ClientDataModel.TrackableItem> GetTrackableItems(string sessionId);
 
         [OperationContract]
+        ClientDataModel.TrackableItem GetTrackableItem(string sessionId, string objectId);
+
+        [OperationContract]
         LoginResponse Login(string userName, string password);
 
 
