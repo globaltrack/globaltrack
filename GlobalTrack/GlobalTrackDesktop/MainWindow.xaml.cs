@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GlobalTrackDesktop.Core;
 using GlobalTrackDesktop.UI;
 using GlobalTrackDesktop.ViewModel;
 using MahApps.Metro;
@@ -26,12 +27,14 @@ namespace GlobalTrackDesktop
         public MainWindow()
         {
             
-         
+            UserContext.Initialize();
             InitializeComponent();
             //ThemeManager.ChangeTheme(Application.Current, ThemeManager.DefaultAccents.First(x => x.Name == "Brown"), Theme.Light);
             LoginDialog dlg = new LoginDialog();
             dlg.ShowDialog();
-            DataContext = new MainViewModel(); 
+            DataContext = new MainViewModel();
+            SettingsViewControl.DataContext = new SettingsViewModel(); 
+            
 
         }
     }

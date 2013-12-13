@@ -14,6 +14,9 @@ namespace GlobalTrackDesktop.ViewModel
 
         public TrackableItemsViewModel TrackableItemsVm { get; set; }
 
+        public SettingsViewModel SettingsVm { get; set; }
+
+
         public ICommand CreateNewTrackingCommand { get; set; }
 
         public MainViewModel()
@@ -21,6 +24,7 @@ namespace GlobalTrackDesktop.ViewModel
             CreateNewTrackingCommand = new DelegateCommand(CreateNewTracking, x => true);
             TrackingsVm = new TrackingsListViewModel();
             TrackableItemsVm = new TrackableItemsViewModel();
+            SettingsVm = new SettingsViewModel();
         }
 
         private void CreateNewTracking(object obj)

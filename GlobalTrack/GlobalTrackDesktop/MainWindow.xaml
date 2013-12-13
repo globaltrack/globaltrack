@@ -39,8 +39,12 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Trackable items">
-                <ui:TrackableItemsView></ui:TrackableItemsView>
+                <ui:TrackableItemsView x:Name="SettingsViewControl"></ui:TrackableItemsView>
             </TabItem>
+            <TabItem Header="Settings">
+                <ui:SettingsView></ui:SettingsView>
+            </TabItem>
+
         </TabControl>
 
     </Grid>
