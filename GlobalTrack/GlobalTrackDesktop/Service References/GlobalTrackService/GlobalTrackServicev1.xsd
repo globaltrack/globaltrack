@@ -1,72 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ClientDataModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ClientDataModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfTracking">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GlobalTrackService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GlobalTrackService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LoginResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tracking" nillable="true" type="tns:Tracking" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfTracking" nillable="true" type="tns:ArrayOfTracking" />
-  <xs:complexType name="Tracking">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="History" nillable="true" type="tns:ArrayOfTrackingHistoryRecord" />
-      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="StateId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="StateName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TrackingItemId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TrackingItemName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Tracking" nillable="true" type="tns:Tracking" />
-  <xs:complexType name="ArrayOfTrackingHistoryRecord">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrackingHistoryRecord" nillable="true" type="tns:TrackingHistoryRecord" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTrackingHistoryRecord" nillable="true" type="tns:ArrayOfTrackingHistoryRecord" />
-  <xs:complexType name="TrackingHistoryRecord">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
-      <xs:element minOccurs="0" name="StateId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TrackingHistoryRecord" nillable="true" type="tns:TrackingHistoryRecord" />
-  <xs:complexType name="ArrayOfTrackableItem">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrackableItem" nillable="true" type="tns:TrackableItem" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTrackableItem" nillable="true" type="tns:ArrayOfTrackableItem" />
-  <xs:complexType name="TrackableItem">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IsSecured" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="States" nillable="true" type="tns:ArrayOfTrackableItemState" />
-      <xs:element minOccurs="0" name="SupportsGeolocationServices" type="xs:boolean" />
-      <xs:element minOccurs="0" name="SupportsUserInformation" type="xs:boolean" />
-      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TrackableItem" nillable="true" type="tns:TrackableItem" />
-  <xs:complexType name="ArrayOfTrackableItemState">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrackableItemState" nillable="true" type="tns:TrackableItemState" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTrackableItemState" nillable="true" type="tns:ArrayOfTrackableItemState" />
-  <xs:complexType name="TrackableItemState">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TrackableItemState" nillable="true" type="tns:TrackableItemState" />
+  <xs:element name="LoginResponse" nillable="true" type="tns:LoginResponse" />
 </xs:schema>

@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.Generic;
+using System.Windows.Input;
 using ClientDataModel;
 using GlobalTrackDesktop.Core;
 using GlobalTrackDesktop.UI.TrackableItems;
@@ -53,12 +54,20 @@ namespace GlobalTrackDesktop.ViewModel.TrackableItems
             var dlg = new TrackableItemStateDialog(new TrackableItemStateViewModel(SelectedState));
             dlg.ShowDialog(); 
 
+
         }
 
         private void AddState(object obj)
         {
-            var dlg = new TrackableItemStateDialog(new TrackableItemStateViewModel(new TrackableItemState()));
-            dlg.ShowDialog(); 
+            var newState = new TrackableItemState(); 
+            var dlg = new TrackableItemStateDialog(new TrackableItemStateViewModel(newState));
+            var res  = dlg.ShowDialog();
+
+            if (res.HasValue && res.Value)
+            {
+                DataSource.States = new List<TrackableItemState>(DataSource.States);
+                DataSource.States.Add(newState); 
+            }
 
         }
     }

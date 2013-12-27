@@ -78,14 +78,20 @@ namespace GlobalTrackDesktop.GlobalTrackService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GlobalTrackService.IGlobalTrackServicev1")]
     public interface IGlobalTrackServicev1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGlobalTrackServicev1/Login", ReplyAction="http://tempuri.org/IGlobalTrackServicev1/LoginResponse")]
+        GlobalTrackDesktop.GlobalTrackService.LoginResponse Login(string userName, string password);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGlobalTrackServicev1/GetTrackings", ReplyAction="http://tempuri.org/IGlobalTrackServicev1/GetTrackingsResponse")]
         ClientDataModel.Tracking[] GetTrackings(string sessionId, System.Nullable<System.DateTime> from, System.Nullable<System.DateTime> to, string searchString);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGlobalTrackServicev1/GetTrackableItems", ReplyAction="http://tempuri.org/IGlobalTrackServicev1/GetTrackableItemsResponse")]
         ClientDataModel.TrackableItem[] GetTrackableItems(string sessionId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGlobalTrackServicev1/Login", ReplyAction="http://tempuri.org/IGlobalTrackServicev1/LoginResponse")]
-        GlobalTrackDesktop.GlobalTrackService.LoginResponse Login(string userName, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGlobalTrackServicev1/GetTrackableItem", ReplyAction="http://tempuri.org/IGlobalTrackServicev1/GetTrackableItemResponse")]
+        ClientDataModel.TrackableItem GetTrackableItem(string sessionId, string objectId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGlobalTrackServicev1/UpdateTrackableItem", ReplyAction="http://tempuri.org/IGlobalTrackServicev1/UpdateTrackableItemResponse")]
+        ClientDataModel.TrackableItem UpdateTrackableItem(string sessionId, ClientDataModel.TrackableItem trackableItem);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -115,6 +121,10 @@ namespace GlobalTrackDesktop.GlobalTrackService {
                 base(binding, remoteAddress) {
         }
         
+        public GlobalTrackDesktop.GlobalTrackService.LoginResponse Login(string userName, string password) {
+            return base.Channel.Login(userName, password);
+        }
+        
         public ClientDataModel.Tracking[] GetTrackings(string sessionId, System.Nullable<System.DateTime> from, System.Nullable<System.DateTime> to, string searchString) {
             return base.Channel.GetTrackings(sessionId, from, to, searchString);
         }
@@ -123,8 +133,12 @@ namespace GlobalTrackDesktop.GlobalTrackService {
             return base.Channel.GetTrackableItems(sessionId);
         }
         
-        public GlobalTrackDesktop.GlobalTrackService.LoginResponse Login(string userName, string password) {
-            return base.Channel.Login(userName, password);
+        public ClientDataModel.TrackableItem GetTrackableItem(string sessionId, string objectId) {
+            return base.Channel.GetTrackableItem(sessionId, objectId);
+        }
+        
+        public ClientDataModel.TrackableItem UpdateTrackableItem(string sessionId, ClientDataModel.TrackableItem trackableItem) {
+            return base.Channel.UpdateTrackableItem(sessionId, trackableItem);
         }
     }
 }

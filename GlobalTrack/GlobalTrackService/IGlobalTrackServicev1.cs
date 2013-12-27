@@ -13,8 +13,8 @@ namespace GlobalTrackService
     public interface IGlobalTrackServicev1
     {
 
-
-        // TODO: Add your service operations here
+        [OperationContract]
+        LoginResponse Login(string userName, string password);
 
         [OperationContract]
         IList<ClientDataModel.Tracking> GetTrackings(string sessionId, DateTime? from, DateTime? to, string searchString);
@@ -26,8 +26,8 @@ namespace GlobalTrackService
         ClientDataModel.TrackableItem GetTrackableItem(string sessionId, string objectId);
 
         [OperationContract]
-        LoginResponse Login(string userName, string password);
-
+        ClientDataModel.TrackableItem UpdateTrackableItem(string sessionId, ClientDataModel.TrackableItem trackableItem);
+        
 
     }
 

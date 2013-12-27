@@ -16,8 +16,8 @@
         <StackPanel Orientation="Vertical">
             <trackableItems:TrackableItemStateView />
             <StackPanel Orientation="Horizontal">
-                <Button Content="Save" Width="70"></Button>
-                <Button Content="Cancel" Width="70"></Button>
+                <Button Content="Save" Width="70" Click="Button_Click"></Button>
+                <Button Content="Cancel" Width="70" Click="Button_Click_1"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -102,6 +102,57 @@ namespace GlobalTrackService
             return cti; 
         }
 
+        public TrackableItem UpdateTrackableItem(string sessionId, TrackableItem clientTrackableItem)
+        {
+            if (!ValidateUser(sessionId))
+                throw new Exception("Not authorized");
+            ObjectId  clietTiId; 
+             if (!ObjectId.TryParse(clientTrackableItem.Id, out  clietTiId))
+                 throw  new Exception("Invalid Trackable Item ID");
+
+            string userId = GetUser(sessionId);
+            var serverTi =
+                _trackableItemsCollection.AsQueryable()
+                                         .FirstOrDefault(
+                                             x =>
+                                             x.Id == clietTiId && x.UserId == userId);  
+            
+            if (serverTi == null)
+            {
+                throw new Exception("TrackableItem with specified id not found in the database");
+            }
+            
+            if (serverTi.States == null ) serverTi.States = new List<ServerDataModel.TrackableItemState>();
+            clientTrackableItem.States.ToList().ForEach(cst => 
+            {
+                //if server entity doesnt contain any client entity - add entity for server. 
+                //however if it is and client's one has an ID set - generate error. 
+                if (serverTi.States.FirstOrDefault(ss => ss.Id.ToString() == cst.Id) == null)
+                {
+                    if (string.IsNullOrEmpty(cst.Id))
+                    {
+                        ServerDataModel.TrackableItemState sState = new ServerDataModel.TrackableItemState() { Id = ObjectId.GenerateNewId() };
+                        serverTi.States.Add(sState);
+                        cst.Id = sState.Id.ToString();
+                    }
+                    else
+                    {
+                        throw new Exception(string.Format("The state with id {0} wasn't found for trackable item {1}. In case adding new state leave the Id field empty." , cst.Id, clientTrackableItem.Id));
+                    }
+
+                }
+
+            });
+
+            //Applying client data
+            serverTi.ApplyClientData(clientTrackableItem);
+            _trackableItemsCollection.Save(serverTi);
+            
+            //return a result to user 
+            return serverTi.ToClientData<TrackableItem>(); 
+
+        }
+
         public LoginResponse Login(string userName, string password)
         {
             //chech user premissoins. 

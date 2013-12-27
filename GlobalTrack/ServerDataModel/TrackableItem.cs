@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using ClientDataModel;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Linq.Expressions;
 namespace ServerDataModel
 {
     
-    public class TrackableItem : IConvertToClientData
+    public class TrackableItem : IConvertToClientData, ICreateFromClientData
     {
         public string UserId { get; set; }
         [BsonId]
@@ -38,6 +39,17 @@ namespace ServerDataModel
             if (States != null)
                 t.States = States.Select(x => x.ToClientData<ClientDataModel.TrackableItemState>()).ToList();
             return t as T; 
+        }
+
+        public void ApplyClientData(ClientDataBase clientEntity)
+        {
+            var cti = clientEntity as ClientDataModel.TrackableItem;
+            this.Description = cti.Description;
+            this.IsSecured = cti.IsSecured;
+            this.Name = cti.Name;
+            this.SupportsGeolocationServices = cti.SupportsGeolocationServices;
+            this.SupportsUserInformation = cti.SupportsUserInformation;
+            this.States.ToList().ForEach(x => x.ApplyClientData(cti.States.FirstOrDefault(s => s.Id == x.Id.ToString()))); 
         }
     }
 

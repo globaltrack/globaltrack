@@ -4,10 +4,16 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:62978/GlobalTrackServicev1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:62978/GlobalTrackServicev1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:62978/GlobalTrackServicev1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ClientDataModel" />
-      <xsd:import schemaLocation="http://localhost:62978/GlobalTrackServicev1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GlobalTrackService" />
+      <xsd:import schemaLocation="http://localhost:62978/GlobalTrackServicev1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GlobalTrackService" />
+      <xsd:import schemaLocation="http://localhost:62978/GlobalTrackServicev1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ClientDataModel" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IGlobalTrackServicev1_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IGlobalTrackServicev1_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
   <wsdl:message name="IGlobalTrackServicev1_GetTrackings_InputMessage">
     <wsdl:part name="parameters" element="tns:GetTrackings" />
   </wsdl:message>
@@ -20,13 +26,23 @@
   <wsdl:message name="IGlobalTrackServicev1_GetTrackableItems_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTrackableItemsResponse" />
   </wsdl:message>
-  <wsdl:message name="IGlobalTrackServicev1_Login_InputMessage">
-    <wsdl:part name="parameters" element="tns:Login" />
+  <wsdl:message name="IGlobalTrackServicev1_GetTrackableItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrackableItem" />
   </wsdl:message>
-  <wsdl:message name="IGlobalTrackServicev1_Login_OutputMessage">
-    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  <wsdl:message name="IGlobalTrackServicev1_GetTrackableItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrackableItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGlobalTrackServicev1_UpdateTrackableItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTrackableItem" />
+  </wsdl:message>
+  <wsdl:message name="IGlobalTrackServicev1_UpdateTrackableItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTrackableItemResponse" />
   </wsdl:message>
   <wsdl:portType name="IGlobalTrackServicev1">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/Login" message="tns:IGlobalTrackServicev1_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/LoginResponse" message="tns:IGlobalTrackServicev1_Login_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetTrackings">
       <wsdl:input wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/GetTrackings" message="tns:IGlobalTrackServicev1_GetTrackings_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/GetTrackingsResponse" message="tns:IGlobalTrackServicev1_GetTrackings_OutputMessage" />
@@ -35,13 +51,26 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/GetTrackableItems" message="tns:IGlobalTrackServicev1_GetTrackableItems_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/GetTrackableItemsResponse" message="tns:IGlobalTrackServicev1_GetTrackableItems_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Login">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/Login" message="tns:IGlobalTrackServicev1_Login_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/LoginResponse" message="tns:IGlobalTrackServicev1_Login_OutputMessage" />
+    <wsdl:operation name="GetTrackableItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/GetTrackableItem" message="tns:IGlobalTrackServicev1_GetTrackableItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/GetTrackableItemResponse" message="tns:IGlobalTrackServicev1_GetTrackableItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTrackableItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/UpdateTrackableItem" message="tns:IGlobalTrackServicev1_UpdateTrackableItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGlobalTrackServicev1/UpdateTrackableItemResponse" message="tns:IGlobalTrackServicev1_UpdateTrackableItem_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IGlobalTrackServicev1" type="tns:IGlobalTrackServicev1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IGlobalTrackServicev1/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetTrackings">
       <soap:operation soapAction="http://tempuri.org/IGlobalTrackServicev1/GetTrackings" style="document" />
       <wsdl:input>
@@ -60,8 +89,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Login">
-      <soap:operation soapAction="http://tempuri.org/IGlobalTrackServicev1/Login" style="document" />
+    <wsdl:operation name="GetTrackableItem">
+      <soap:operation soapAction="http://tempuri.org/IGlobalTrackServicev1/GetTrackableItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTrackableItem">
+      <soap:operation soapAction="http://tempuri.org/IGlobalTrackServicev1/UpdateTrackableItem" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

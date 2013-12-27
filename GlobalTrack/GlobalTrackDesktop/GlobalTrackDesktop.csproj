@@ -43,6 +43,7 @@
     <StartupObject>GlobalTrackDesktop.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClientDataModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="MahApps.Metro, Version=0.11.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\MahApps.Metro.dll</HintPath>
@@ -237,12 +238,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="1386692539_17275.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClientDataModel\ClientDataModel.csproj">
-      <Project>{ad8943ca-2518-4dca-9140-79baa8804c7e}</Project>
-      <Name>ClientDataModel %28ClientDataModel\ClientDataModel%29</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\GlobalTrackService\" />

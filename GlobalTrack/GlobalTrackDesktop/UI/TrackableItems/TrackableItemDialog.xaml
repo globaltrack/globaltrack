@@ -19,8 +19,8 @@
     <Grid>
         <trackableItems:TrackableItemView VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></trackableItems:TrackableItemView>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" >
-                <Button Content="Save" Width="50"></Button>
-                <Button Content="Cancel" Width="50"></Button>
+                <Button Content="Save" Width="70" Click="Button_Click"></Button>
+                <Button Content="Cancel" Width="70" Click="Button_Click_1"></Button>
             </StackPanel>
         </Grid>
         

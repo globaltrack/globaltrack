@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IConvertToClientData.cs" />
+    <Compile Include="ICreateFromClientData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchTracking.cs" />
     <Compile Include="SearchTrackingInfo.cs" />
