@@ -33,7 +33,7 @@ namespace GlobalTrackDesktop
             LoginDialog dlg = new LoginDialog();
             dlg.ShowDialog();
             DataContext = new MainViewModel();
-            SettingsViewControl.DataContext = new SettingsViewModel(); 
+            //SettingsViewControl.DataContext = new SettingsViewModel(); 
             
 
         }

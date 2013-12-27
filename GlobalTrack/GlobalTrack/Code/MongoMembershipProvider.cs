@@ -194,7 +194,7 @@ namespace GlobalTrack.Code
         }
         public override int GetUserIdFromOAuth(string provider, string providerUserId)
         {
-            return 1; 
+            return -1; 
             //return base.GetUserIdFromOAuth(provider, providerUserId);
         }
         public override string CreateUserAndAccount(string userName, string password, bool requireConfirmation, IDictionary<string, object> values)

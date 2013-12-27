@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Windows;
 using GlobalTrackDesktop.Core;
 using MahApps.Metro;
 
-namespace GlobalTrackDesktop.ViewModel
+namespace GlobalTrackDesktop.ViewModel.Settings
 {
     public class SettingsViewModel : ViewModelBase
     {

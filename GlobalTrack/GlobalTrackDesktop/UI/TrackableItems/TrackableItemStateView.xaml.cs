@@ -12,14 +12,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GlobalTrackDesktop.UI
+namespace GlobalTrackDesktop.UI.TrackableItems
 {
     /// <summary>
-    /// Interaction logic for TrackableItemView.xaml
+    /// Interaction logic for TrackableItemStateView.xaml
     /// </summary>
-    public partial class TrackableItemView : UserControl
+    public partial class TrackableItemStateView : UserControl
     {
-        public TrackableItemView()
+        public TrackableItemStateView()
         {
             InitializeComponent();
         }

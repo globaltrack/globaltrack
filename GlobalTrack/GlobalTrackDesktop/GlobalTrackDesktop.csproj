@@ -86,16 +86,22 @@
     <Compile Include="UI\LoginDialog.xaml.cs">
       <DependentUpon>LoginDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\SettingsView.xaml.cs">
+    <Compile Include="UI\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\TrackableItemDialog.xaml.cs">
+    <Compile Include="UI\TrackableItems\TrackableItemDialog.xaml.cs">
       <DependentUpon>TrackableItemDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\TrackableItemsView.xaml.cs">
+    <Compile Include="UI\TrackableItems\TrackableItemStateDialog.xaml.cs">
+      <DependentUpon>TrackableItemStateDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrackableItems\TrackableItemStateView.xaml.cs">
+      <DependentUpon>TrackableItemStateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrackableItems\TrackableItemsView.xaml.cs">
       <DependentUpon>TrackableItemsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\TrackableItemView.xaml.cs">
+    <Compile Include="UI\TrackableItems\TrackableItemView.xaml.cs">
       <DependentUpon>TrackableItemView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\TrackingView.xaml.cs">
@@ -111,11 +117,12 @@
       <DependentUpon>Trackings.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\SettingsViewModel.cs" />
-    <Compile Include="ViewModel\TrackableItemsViewModel.cs" />
-    <Compile Include="ViewModel\TrackableItemViewModel.cs" />
-    <Compile Include="ViewModel\TrackingHistoryViewModel.cs" />
-    <Compile Include="ViewModel\TrackingsListViewModel.cs" />
+    <Compile Include="ViewModel\Settings\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\TrackableItems\TrackableItemStateViewModel.cs" />
+    <Compile Include="ViewModel\TrackableItems\TrackableItemsViewModel.cs" />
+    <Compile Include="ViewModel\TrackableItems\TrackableItemViewModel.cs" />
+    <Compile Include="ViewModel\Trackings\TrackingHistoryViewModel.cs" />
+    <Compile Include="ViewModel\Trackings\TrackingsListViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -133,19 +140,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\SettingsView.xaml">
+    <Page Include="UI\Settings\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\TrackableItemDialog.xaml">
+    <Page Include="UI\TrackableItems\TrackableItemDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\TrackableItemsView.xaml">
+    <Page Include="UI\TrackableItems\TrackableItemStateDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\TrackableItemView.xaml">
+    <Page Include="UI\TrackableItems\TrackableItemStateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TrackableItems\TrackableItemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TrackableItems\TrackableItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,7 +199,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\ClientDataModel.TrackableItem.datasource" />
     <None Include="Properties\DataSources\ClientDataModel.Tracking.datasource" />
     <None Include="Properties\Settings.settings">

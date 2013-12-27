@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Windows.Input;
 using ClientDataModel;
 using GlobalTrackDesktop.Core;
-using GlobalTrackDesktop.GlobalTrackService;
 using GlobalTrackDesktop.UI;
 
-namespace GlobalTrackDesktop.ViewModel
+namespace GlobalTrackDesktop.ViewModel.Trackings
 {
     public class TrackingsListViewModel : ViewModelBase
     {

@@ -5,6 +5,9 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using GlobalTrackDesktop.Core;
+using GlobalTrackDesktop.ViewModel.Settings;
+using GlobalTrackDesktop.ViewModel.TrackableItems;
+using GlobalTrackDesktop.ViewModel.Trackings;
 
 namespace GlobalTrackDesktop.ViewModel
 {

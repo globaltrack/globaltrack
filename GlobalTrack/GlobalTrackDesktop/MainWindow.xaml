@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:ui="clr-namespace:GlobalTrackDesktop.UI"
+                      xmlns:settings="clr-namespace:GlobalTrackDesktop.UI.Settings"
+                      xmlns:trackableItems="clr-namespace:GlobalTrackDesktop.UI.TrackableItems"
                       Title="Global Track Desktop" Height="407" Width="979"
                       BorderThickness="1"
                       WindowStartupLocation="CenterScreen"
@@ -39,10 +41,10 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Trackable items">
-                <ui:TrackableItemsView x:Name="SettingsViewControl"></ui:TrackableItemsView>
+                <trackableItems:TrackableItemsView x:Name="SettingsViewControl"></trackableItems:TrackableItemsView>
             </TabItem>
             <TabItem Header="Settings">
-                <ui:SettingsView></ui:SettingsView>
+                <settings:SettingsView></settings:SettingsView>
             </TabItem>
 
         </TabControl>

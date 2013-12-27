@@ -270,13 +270,14 @@ namespace GlobalTrack.Controllers
                 // Insert a new user into the database
                 using (UsersContext db = new UsersContext())
                 {
-                    UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
+                   // UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
+                    var users = OAuthWebSecurity.GetAccountsFromUserName(model.UserName); 
                     // Check if user already exists
-                    if (user == null)
+                    if (users == null || users.Count == 0 )
                     {
                         // Insert name into the profile table
-                        db.UserProfiles.Add(new UserProfile { UserName = model.UserName });
-                        db.SaveChanges();
+                        //db.UserProfiles.Add(new UserProfile { UserName = model.UserName });
+                        //db.SaveChanges();
 
                         OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, model.UserName);
                         OAuthWebSecurity.Login(provider, providerUserId, createPersistentCookie: false);
