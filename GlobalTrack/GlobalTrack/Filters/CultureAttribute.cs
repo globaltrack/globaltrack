@@ -32,7 +32,22 @@ namespace GlobalTrack.Filters
 
         public void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            //не реализован
+            string cultureName = null;
+            // Получаем куки из контекста, которые могут содержать установленную культуру
+            HttpCookie cultureCookie = filterContext.HttpContext.Request.Cookies["lang"];
+            if (cultureCookie != null)
+                cultureName = cultureCookie.Value;
+            else
+                cultureName = "en-US";
+
+            // Список культур
+            List<string> cultures = new List<string>() { "ru-RU", "en-US", "de-DE" };
+            if (!cultures.Contains(cultureName))
+            {
+                cultureName = "en-US";
+            }
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(cultureName);
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(cultureName);
         }
     }
 }

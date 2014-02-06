@@ -4,14 +4,17 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using GlobalTrack.Filters;
 using GlobalTrack.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
+using Resources;
 using ServerDataModel;
 
 namespace GlobalTrack.Controllers
 {
+    [Culture]
     public class PublicTrackingController : Controller
     {
         private MongoCollection<TrackableItem> _trackableItemsCollection;
@@ -38,6 +41,7 @@ namespace GlobalTrack.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.PasswordRequired = false; 
             return View();
         }
         [HttpPost]
@@ -52,18 +56,44 @@ namespace GlobalTrack.Controllers
                     Tracking t = _trackingCollection.AsQueryable().FirstOrDefault(x => x.Id == id);
                     if (t != null)
                     {
-                        //found 
-                        return RedirectToAction("TrackingDetails", new {trackingId = st.TrackingNumber}); 
+                        if (string.IsNullOrEmpty(t.Password) ||
+                            (!string.IsNullOrWhiteSpace(st.Password) && !string.IsNullOrEmpty(t.Password) &&
+                             string.Equals(st.Password, t.Password)))
+                        {
+                            //found and unsecured or password is OK: 
+
+                            SearchTrackingInfo si = new SearchTrackingInfo();
+                            si.QrData = QRCodeHtmlHelper.CreateQrData(t.Id.ToString(), t.Password); 
+                            TrackableItem ti =
+                                _trackableItemsCollection.AsQueryable().FirstOrDefault(x => x.Id == t.TrackingItemId);
+                            TrackableItemState currentState = ti.States.FirstOrDefault(state => state.Id == t.StateId);
+                            si.TrackingName = t.Id.ToString();
+                            si.TrackabeItemName = ti.Name;
+                            si.State = currentState.Name;
+                            si.History = t.History;
+                            si.SupportsGeolocationServices = ti.SupportsGeolocationServices;
+                            ViewBag.StateNames = new Dictionary<string, string>();
+                            ti.States.ToList()
+                              .ForEach(
+                                  s => ((Dictionary<string, string>) ViewBag.StateNames).Add(s.Id.ToString(), s.Name));
+                            return View("TrackingDetails", si);
+                            //return RedirectToAction("TrackingDetails", new {trackingId = st.TrackingNumber});
+                        }
+                        else
+                        {
+                            //need password
+                            ViewBag.PasswordRequired = true;
+                        }
 
                     }
                     else
                     {
-                        ModelState.AddModelError("", "The item with speficied number wasn't found in our system. Please verify your input.");
+                        ModelState.AddModelError("", Resource.PublicTrackingController_Index_The_item_with_speficied_number_wasn_t_found_in_our_system__Please_verify_your_input_);
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError("TrackingNumber", "Incorrect tracking number. Please verify your input.");
+                    ModelState.AddModelError("TrackingNumber", Resource.PublicTrackingController_Index_Incorrect_tracking_number__Please_verify_your_input_);
                     //incorrect tracking number 
                 }
             }
@@ -76,24 +106,34 @@ namespace GlobalTrack.Controllers
 
         public ActionResult TrackingDetails(string trackingId)
         {
-            ObjectId id = ObjectId.Parse(trackingId);
+            try
+            {
+                ObjectId id = ObjectId.Parse(trackingId);
 
-            Tracking t = _trackingCollection.AsQueryable().FirstOrDefault(x => x.Id == id);
-            TrackableItem ti = _trackableItemsCollection.AsQueryable().FirstOrDefault(x => x.Id == t.TrackingItemId);
-            TrackableItemState currentState = ti.States.FirstOrDefault(state => state.Id == t.StateId);
+                Tracking t = _trackingCollection.AsQueryable().FirstOrDefault(x => x.Id == id);
+                TrackableItem ti = _trackableItemsCollection.AsQueryable().FirstOrDefault(x => x.Id == t.TrackingItemId);
+                TrackableItemState currentState = ti.States.FirstOrDefault(state => state.Id == t.StateId);
 
-            ViewBag.StateNames = new Dictionary<string, string>();
-            ti.States.ToList().ForEach(s => ((Dictionary<string, string>)ViewBag.StateNames).Add(s.Id.ToString(), s.Name)); 
+                ViewBag.StateNames = new Dictionary<string, string>();
+                ti.States.ToList().ForEach(s => ((Dictionary<string, string>)ViewBag.StateNames).Add(s.Id.ToString(), s.Name));
 
 
-            SearchTrackingInfo si = new SearchTrackingInfo();
-            si.TrackingName = t.Id.ToString();
-            si.TrackabeItemName = ti.Name;
-            si.State = currentState.Name;
-            si.History = t.History;
-            si.SupportsGeolocationServices = ti.SupportsGeolocationServices; 
+                SearchTrackingInfo si = new SearchTrackingInfo();
+                si.QrData = QRCodeHtmlHelper.CreateQrData(t.Id.ToString(), t.Password); 
+                si.TrackingName = t.Id.ToString();
+                si.TrackabeItemName = ti.Name;
+                si.State = currentState.Name;
+                si.History = t.History;
+                si.SupportsGeolocationServices = ti.SupportsGeolocationServices;
 
-            return View(si); 
+                return View(si); 
+            }
+            catch (Exception)
+            {
+                return new HttpNotFoundResult("The tracking with a specified tracking number doesn't exist");
+                
+            }
+            
         }
     }
 }

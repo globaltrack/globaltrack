@@ -35,9 +35,14 @@ namespace GlobalTrack.Controllers
             return Redirect(returnUrl);
         }
 
+        public ActionResult Download()
+        {
+            return View(); 
+        }
+
         public ActionResult Index()
         {
-            ViewBag.Message = "Track everythign with the SaaS tracking platform";
+            ViewBag.Message = Resources.Resource.Title; // "Track everythign with the SaaS tracking platform";
 
             return View();
         }

@@ -5,8 +5,13 @@ namespace ServerDataModel
 {
     public class SearchTracking
     {
-        [DisplayName("Please specify your tracking number")]
-        [StringLength(24, ErrorMessage = "The tracking number  must be 24 characters long.", MinimumLength = 24)]
+        [Display(Name = "SearchTracking_TrackingNumber", ResourceType = typeof(Resources.Resource))]
+        [StringLength(24, ErrorMessageResourceName = "SearchTracking_TrackingNumber_Validation", MinimumLength = 24, ErrorMessageResourceType = typeof(Resources.Resource))]
         public string TrackingNumber { get; set; }
+
+        [Display(Name = "SearchTracking_Password", ResourceType = typeof(Resources.Resource))]
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
     }
 }

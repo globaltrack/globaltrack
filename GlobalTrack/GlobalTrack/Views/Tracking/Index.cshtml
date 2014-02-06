@@ -1,9 +1,13 @@
 ﻿@model PagedList.IPagedList<GlobalTrack.Models.ServerDataModel.TrackingViewModel>
+@using System.Text.RegularExpressions
 @using PagedList.Mvc;
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "All trackings";
 }
+
+
+
 
 <h2>@ViewBag.Title</h2>
 
@@ -36,7 +40,16 @@
                     @Html.TextBox("endDate","", new {  @readonly="readonly" , @class = "dateTime"})  
                 </td>
             </tr>
+           <tr>
+                <td>Trackable item
+                </td>
+                <td>
+                    @Html.DropDownList("selectedTrackableItem", new SelectList(ViewBag.TrackingItems, "Value", "Text"))
+                </td>
+            </tr> 
         </table>
+        @*@Html.DropDownListFor(model => ViewBag.TrackingItemId, new SelectList(ViewBag.TrackingItems, "Value", "Text"), "Select trackable item")*@
+
         <h3>Search in</h3>
         @Html.CheckBox("searchInUserInfo", (bool)ViewBag.SearchInUserInfo) User Information
         @Html.CheckBox("searchInHistory", (bool)ViewBag.SearchInHistory) Comments
@@ -54,11 +67,18 @@
             @*@Html.DisplayNameFor(model => model[0].TrackingNumber)*@
         </th>
         <th>
+            Password
+            @*@Html.DisplayNameFor(model => model[0].TrackingNumber)*@
+        </th>
+
+        <th>
             Created
             @*@Html.DisplayNameFor(model => model.User)*@
         </th>
 
-
+         <th>
+            Tracking item
+        </th>
         <th>
             Comment
             @*@Html.DisplayNameFor(model => model.Comment)*@
@@ -74,9 +94,15 @@
         </td>
 
         <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
+            @Html.DisplayFor(modelItem => item.Password)
         </td>
 
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrackingItemName)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Comment)
         </td>
@@ -84,6 +110,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) |
             @Html.ActionLink("Track", "TrackingDetails","PublicTracking",  new {  trackingId=item.Id }, new {}) |
+            @Html.ActionLink("Printable version", "PrintableVersion","Tracking",  new {  id=item.Id }, new {}) |
             @Html.ActionLink("Delete", "Delete", new {  id=item.Id})
         </td>
     </tr>
@@ -95,3 +122,21 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
 
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page, /* sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter*/ }))
 
+@{
+    var errorMessage = string.Empty;
+    if (!String.IsNullOrEmpty(ViewBag.errorsOccurred))
+    {errorMessage = ViewBag.errorsOccurred;} 
+    else if (TempData["errorsOccurred"] != null)
+    {
+        errorMessage = TempData["errorsOccurred"].ToString(); 
+    }
+
+    if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <text>
+            <script type="text/javascript">
+                alert("@Html.Encode(Regex.Replace(errorMessage, @"\t|\n|\r", ""))");
+            </script>
+        </text>
+ }
+}

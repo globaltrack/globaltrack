@@ -1,9 +1,11 @@
-﻿@model GlobalTrack.Models.ServerDataModel.TrackingViewModel
+﻿@using System.Text.RegularExpressions
+@model GlobalTrack.Models.ServerDataModel.TrackingViewModel
 
 @{
     ViewBag.Title = "Edit";
 }
 
+<div id="divForm"></div>
 <h2>Edit</h2>
 
 @using (Html.BeginForm(new { id = Model.Id }))
@@ -42,4 +44,23 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+}
+
+@{
+    var errorMessage = string.Empty;
+    if (!String.IsNullOrEmpty(ViewBag.errorsOccurred))
+    {errorMessage = ViewBag.errorsOccurred;} 
+    else if (TempData["errorsOccurred"] != null)
+    {
+        errorMessage = TempData["errorsOccurred"].ToString(); 
+    }
+
+    if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <text>
+            <script type="text/javascript">
+                alert("@Html.Encode(Regex.Replace(errorMessage, @"\t|\n|\r", ""))");
+            </script>
+        </text>
+ }
 }

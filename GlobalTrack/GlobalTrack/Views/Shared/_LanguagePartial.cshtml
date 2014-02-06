@@ -1,0 +1,9 @@
+﻿@using (Html.BeginForm("ChangeCulture", "Home"))
+                { 
+                    <select name="lang"  onchange="this.form.submit()">
+                        <option disabled selected>@Resources.Resource.ChooseLang</option>
+                        <option value="ru-RU">Русский</option>
+                        <option value="en-US">English</option>
+                        <option value="de-DE">Deutsch</option>
+                    </select>
+                }

@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using GlobalTrack.Filters;
 using GlobalTrack.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -16,6 +17,7 @@ namespace GlobalTrack.Controllers
 {
 
     [Authorize]
+    [Culture]
     public class TrackableItemsController : Controller
     {
         private MongoCollection<TrackableItem> _trackableItemsCollection;

@@ -120,11 +120,92 @@
   <data name="ChooseLang" xml:space="preserve">
     <value>Select language</value>
   </data>
+  <data name="HomeIndexConfigureEnvContent" xml:space="preserve">
+    <value>Confugure your environment with defining trackable items. For any trackable item, define the set of additional services, like gelocation, QR-Codes, etc.</value>
+  </data>
+  <data name="HomeIndexConfigureEnvTitle" xml:space="preserve">
+    <value>Configure your environment</value>
+  </data>
+  <data name="HomeIndexGettingStartedContent" xml:space="preserve">
+    <value>See the demo videos how to create your account, configure trackable items and states, share items with your subscribers</value>
+  </data>
+  <data name="HomeIndexGettingStartedTitle" xml:space="preserve">
+    <value>Getting Started</value>
+  </data>
+  <data name="HomeIndexLearnMore" xml:space="preserve">
+    <value>Learn more...</value>
+  </data>
+  <data name="HomeIndexRegisterContent" xml:space="preserve">
+    <value>Register at the Golbal Track site. After you register you will be able to create trackings and share them with your subscribers.</value>
+  </data>
+  <data name="HomeIndexRegisterTitle" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="HomeIndexShareYourItemsContent" xml:space="preserve">
+    <value>Start using your trackable items by creating new trackings. Share your trackings with your subscribers allowing them easily track the status of your trackings</value>
+  </data>
+  <data name="HomeIndexShareYourItemsTitle" xml:space="preserve">
+    <value>Share your items with your subscribers</value>
+  </data>
+  <data name="HomeIndexTrack" xml:space="preserve">
+    <value>Track</value>
+  </data>
+  <data name="HomeIndex_ForServiceProviders" xml:space="preserve">
+    <value>For service providers - we suggest the following:</value>
+  </data>
+  <data name="HomeIndex_ForUsers" xml:space="preserve">
+    <value>For users - we suggest the following:</value>
+  </data>
+  <data name="HomeIndex_TrackYourItemsContent" xml:space="preserve">
+    <value>Just navigate to the "Track" link in the header menu, enter a valid tracking number and get the status of your deal!</value>
+  </data>
+  <data name="HomeIndex_TrackYourItemsTitle" xml:space="preserve">
+    <value>Track your items</value>
+  </data>
+  <data name="MainMenuAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MainMenuContact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="MainMenuControlPanel" xml:space="preserve">
+    <value>Control Panel</value>
+  </data>
+  <data name="MainMenuDownload" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="MainMenuHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="MainMenuTrack" xml:space="preserve">
+    <value>Track</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="PublicTrackingController_Index_Incorrect_tracking_number__Please_verify_your_input_" xml:space="preserve">
+    <value>Incorrect tracking number. Please verify your input.</value>
+  </data>
+  <data name="PublicTrackingController_Index_The_item_with_speficied_number_wasn_t_found_in_our_system__Please_verify_your_input_" xml:space="preserve">
+    <value>The item with speficied number wasn't found in our system. Please verify your input.</value>
+  </data>
+  <data name="PublicTrackingIndexNavigateBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="PublicTrackingIndexPleaseSpecify" xml:space="preserve">
+    <value>Please specify your tracking number</value>
+  </data>
+  <data name="PublicTrackingIndexTrackButton" xml:space="preserve">
+    <value>Track</value>
+  </data>
+  <data name="PublicTrackingIndexTrackTitle" xml:space="preserve">
+    <value>Track</value>
+  </data>
   <data name="RememberMe" xml:space="preserve">
     <value>Remember me</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Track everythign with the SaaS tracking platform</value>
   </data>
   <data name="UserName" xml:space="preserve">
     <value>User name</value>

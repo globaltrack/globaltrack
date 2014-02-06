@@ -117,97 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ChooseLang" xml:space="preserve">
-    <value>Выбрать язык</value>
-  </data>
-  <data name="HomeIndexConfigureEnvContent" xml:space="preserve">
-    <value>Настройте ваши параметры, включая типы заказов. Для любого типа заказов настраивайте дополнительные сервисы, такие как QR-коды, карты и геолокация, уведомления по электронной почте. </value>
-  </data>
-  <data name="HomeIndexConfigureEnvTitle" xml:space="preserve">
-    <value>Настройте окружение</value>
-  </data>
-  <data name="HomeIndexGettingStartedContent" xml:space="preserve">
-    <value>Ознакомтесь с демонстрационными видео роликами, показывающими как создать новый аккаунт, сконфигурировать типы отслеживаемых заказов и как предоставить вашим пользователям возможность следить за статусом заказов. </value>
-  </data>
-  <data name="HomeIndexGettingStartedTitle" xml:space="preserve">
-    <value>Начиная работу</value>
-  </data>
-  <data name="HomeIndexLearnMore" xml:space="preserve">
-    <value>Узнать больше...</value>
-  </data>
-  <data name="HomeIndexRegisterContent" xml:space="preserve">
-    <value>Зарегистрируйтесь на нашем сайте. После регистрации вы будете иметь возможнотсь настраивать и создавать заказы, а так же делиться их статусом со своими потребителями. </value>
-  </data>
-  <data name="HomeIndexRegisterTitle" xml:space="preserve">
-    <value>Зарегистрируйтесь</value>
-  </data>
-  <data name="HomeIndexShareYourItemsContent" xml:space="preserve">
-    <value>Начните создавать заказы. Сообщите вашему клиенту номер заказа для того чтобы он  с легкостью отслеживал его статус.</value>
-  </data>
-  <data name="HomeIndexShareYourItemsTitle" xml:space="preserve">
-    <value>Делитесь статусом заказов с вашими клиентами или пользователями</value>
-  </data>
-  <data name="HomeIndexTrack" xml:space="preserve">
-    <value>Отследить</value>
-  </data>
-  <data name="HomeIndex_ForServiceProviders" xml:space="preserve">
-    <value>Для поставщиков услуг:</value>
-  </data>
-  <data name="HomeIndex_ForUsers" xml:space="preserve">
-    <value>Для пользователей:</value>
-  </data>
-  <data name="HomeIndex_TrackYourItemsContent" xml:space="preserve">
-    <value>Просто перейдите по ссылке "Отслеживание" в навигационном меню, ввендите номер заказа и получите его статус!</value>
-  </data>
-  <data name="HomeIndex_TrackYourItemsTitle" xml:space="preserve">
-    <value>Отслеживайте заказы</value>
-  </data>
-  <data name="MainMenuAbout" xml:space="preserve">
-    <value>О проекте</value>
-  </data>
-  <data name="MainMenuContact" xml:space="preserve">
-    <value>Контакты</value>
-  </data>
-  <data name="MainMenuControlPanel" xml:space="preserve">
-    <value>Панель управления</value>
-  </data>
-  <data name="MainMenuDownload" xml:space="preserve">
-    <value>Скачать</value>
-  </data>
-  <data name="MainMenuHome" xml:space="preserve">
-    <value>Главная</value>
-  </data>
-  <data name="MainMenuTrack" xml:space="preserve">
-    <value>Отслеживание</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Пароль</value>
-  </data>
-  <data name="PublicTrackingController_Index_Incorrect_tracking_number__Please_verify_your_input_" xml:space="preserve">
-    <value>Неправильный  номер заказа. Пожалуйста, проверьте правильность ввода.</value>
-  </data>
-  <data name="PublicTrackingController_Index_The_item_with_speficied_number_wasn_t_found_in_our_system__Please_verify_your_input_" xml:space="preserve">
-    <value>Заказ с указанным номером не найден. Пожалуйста, проверьте правильность ввода.</value>
-  </data>
-  <data name="PublicTrackingIndexNavigateBack" xml:space="preserve">
-    <value>Назад</value>
-  </data>
-  <data name="PublicTrackingIndexPleaseSpecify" xml:space="preserve">
-    <value>Пожалуйста, введите номер заказа</value>
-  </data>
-  <data name="PublicTrackingIndexTrackButton" xml:space="preserve">
-    <value>Получить статус</value>
-  </data>
-  <data name="PublicTrackingIndexTrackTitle" xml:space="preserve">
-    <value>Отслеживание</value>
-  </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Запомнить на этом компьютере</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Отслеживайте заказы при помощи бесплатной интернет-платформы</value>
-  </data>
-  <data name="UserName" xml:space="preserve">
-    <value>Логин</value>
+  <data name="NewTrackingNotificationTemplate" xml:space="preserve">
+    <value>&lt;p&gt;&lt;span style="font-size: large;"&gt;Global Track Notification&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;New Tracking has been created.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Service provider: &lt;/strong&gt;#ServiceProvider#&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tracking Item:&lt;/strong&gt;#TrackingItemName#&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Current Status:&lt;/strong&gt;#Status#&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt;#Comment#&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tracking Number:&amp;nbsp;&lt;/strong&gt;#TrackingNumber#&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Password: &lt;/strong&gt;#Password#&lt;/p&gt;
+&lt;p&gt;You may track the status of your order by visiting tracking service page:&amp;nbsp;&lt;/p&gt;
+&lt;a href="http://globaltrack.uhurucloud.com/PublicTracking"&gt;http://globaltrack.uhurucloud.com/PublicTracking&lt;/a&gt;
+&lt;p&gt;To track your order with online service please provide tracking number and a password (if applicable).&lt;/p&gt;
+&lt;p&gt;You may also track your order with a one of the &lt;a href="http://globaltrack.uhurucloud.com/Home/Download"&gt;mobile application:&lt;/a&gt;&lt;/p&gt;
+#QrCodeUrl#</value>
   </data>
 </root>

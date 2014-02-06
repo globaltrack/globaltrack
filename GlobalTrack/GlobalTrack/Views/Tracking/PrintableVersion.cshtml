@@ -1,0 +1,63 @@
+﻿@model ServerDataModel.Tracking
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+     @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>PrintableVersion</title>
+        
+    </head>
+
+    <body>
+        <div>
+            @{
+                var trackingData = QRCodeHtmlHelper.CreateQrData(Model.TrackingNumber, Model.Password);  
+                @Html.QRCode(trackingData, 150); 
+            }
+        </div>
+        <fieldset>
+            <legend>Tracking</legend>
+    
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.TrackingNumber)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.TrackingNumber)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Password)
+            </div>
+            
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.User)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.User)
+            </div>
+            
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.History[0].Comment)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.History[0].Comment)
+            </div>
+    
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.CreatedDate)
+            </div>
+        </fieldset>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </body>
+</html>

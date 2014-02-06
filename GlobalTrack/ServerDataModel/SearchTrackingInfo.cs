@@ -11,6 +11,8 @@ namespace ServerDataModel
         public string TrackabeItemName { get; set;}
         [DisplayName("Current status")]
         public string State { get; set; }
+        
+        public string QrData { get; set; }
         public IList<TrackableItemState> PossibleStates { get; set; }
         public IList<TrackingHistoryRecord> History { get; set; }
         public bool SupportsGeolocationServices { get; set; }

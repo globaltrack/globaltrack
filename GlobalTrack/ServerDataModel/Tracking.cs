@@ -25,8 +25,11 @@ namespace ServerDataModel
         }
 
         public string User { get; set; }
+        
         public ObjectId TrackingItemId { get; set; }
+        
         public ObjectId StateId { get; set; }
+        
         [DisplayName("Comment")]
         public string Comment { get; set;}
 
@@ -37,9 +40,13 @@ namespace ServerDataModel
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         [DisplayName("Created Date")]
         public DateTime CreatedDate { get; set; }
+        
         [DisplayName("Customer Information")]
         public TrackingCustomerInformation CustomerInformation { get; set; }
 
-        
+        [DisplayName("Password")]
+        public string Password { get; set; }
+
+
     }
 }

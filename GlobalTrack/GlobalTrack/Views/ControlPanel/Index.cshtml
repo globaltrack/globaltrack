@@ -1,9 +1,13 @@
 ﻿<h2> @ViewBag.UserName - Control panel</h2>
 <h3>My Trackable items</h3>
 <li>@Html.ActionLink("Manage trackable items", "Index", "TrackableItems")</li>
+
 <h3>My Trackings</h3>
 <li>@Html.ActionLink("Create new tracking", "Create", "Tracking")</li>
 <li>@Html.ActionLink("Manage trackings", "Index", "Tracking")</li>
+
+<h3>Settings</h3>
+<li>@Html.ActionLink("User Settings", "UserInformation", "ControlPanel")</li>
 
  
 

@@ -20,17 +20,18 @@
                     </section>
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Track", "Index", "PublicTracking")</li>
-                            <li>@Html.ActionLink("Control Panel", "Index", "ControlPanel")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>@Html.ActionLink(@Resources.Resource.MainMenuHome, "Index", "Home")</li>
+                            <li>@Html.ActionLink(@Resources.Resource.MainMenuTrack, "Index", "PublicTracking")</li>
+                            <li>@Html.ActionLink(@Resources.Resource.MainMenuControlPanel, "Index", "ControlPanel")</li>
+                            <li>@Html.ActionLink(@Resources.Resource.MainMenuDownload, "Download", "Home")</li>
+                            <li>@Html.ActionLink(@Resources.Resource.MainMenuAbout, "About", "Home")</li>
+                            <li>@Html.ActionLink(@Resources.Resource.MainMenuContact, "Contact", "Home")</li>
                         </ul>
                     </nav>
                 </div>
             </div>
             <div>
-            @* language 
+                @* language 
                 @using (Html.BeginForm("ChangeCulture", "Home"))
                 { 
                     <select name="lang"  onchange="this.form.submit()">
@@ -50,6 +51,9 @@
             </section>
         </div>
         <footer>
+            <section id="language">
+                        @Html.Partial("_LanguagePartial")
+                    </section>
             <div class="content-wrapper">
                 <div class="float-left">
                     <p>&copy; @DateTime.Now.Year - GlobalTrack - Alexey Dubovenko</p> 
@@ -59,37 +63,46 @@
 
         @Scripts.Render("~/bundles/jquery")
         <!--стили jquery ui-->
-    @Styles.Render("~/Content/themes/base/css")
-    <!--сама библиотека jquey ui-->
-    @Scripts.Render("~/bundles/jqueryui")
+        @Styles.Render("~/Content/themes/base/css")
+        <!--сама библиотека jquey ui-->
+        @Scripts.Render("~/bundles/jqueryui")
 
         @RenderSection("scripts", required: false)
         <script type="text/javascript">
-     $(document).ready(function() {
-         $("#startDate").datepicker({
-             dateFormat: 'dd/mm/yy',
-             showOn: 'both',
-             buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
-             buttonImageOnly: true,
-             showmonth: true,
-             autoSize: true,
-             showAnim: 'slideDown',
-             duration: 'fast'
-         });
-     });
-     $(document).ready(function () {
-         $("#endDate").datepicker({
-             dateFormat: 'dd/mm/yy',
-             showOn: 'both',
-             buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
-             buttonImageOnly: true,
-             showmonth: true,
-             autoSize: true,
-             showAnim: 'slideDown',
-             duration: 'fast'
-         });
-     });
- </script> 
-              
+            $(document).ready(function() {
+                $("#startDate").datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    showOn: 'both',
+                    buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+                    buttonImageOnly: true,
+                    showmonth: true,
+                    autoSize: true,
+                    showAnim: 'slideDown',
+                    duration: 'fast'
+                });
+            });
+            $(document).ready(function () {
+                $("#endDate").datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    showOn: 'both',
+                    buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+                    buttonImageOnly: true,
+                    showmonth: true,
+                    autoSize: true,
+                    showAnim: 'slideDown',
+                    duration: 'fast'
+                });
+            });
+        </script> 
+         <link href="@Url.Content("~/Scripts/fancybox/jquery.fancybox.css")" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="@Url.Content("~/Scripts/fancybox/jquery.fancybox.pack.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#divForm").fancybox();
+    });
+</script>     
     </body>
+    
+  
 </html>

@@ -199,6 +199,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Code\MongoMembershipProvider.cs" />
     <Compile Include="Code\MongoRoleProvider.cs" />
+    <Compile Include="Code\PasswordGenerator.cs" />
+    <Compile Include="Code\QRCodeHtmlHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ControlPanelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -321,19 +323,19 @@
     </Content>
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
+    <Content Include="fonts\Images\accent.png" />
+    <Content Include="fonts\Images\bullet.png" />
+    <Content Include="fonts\Images\heroAccent.png" />
+    <Content Include="fonts\Images\orderedList0.png" />
+    <Content Include="fonts\Images\orderedList1.png" />
+    <Content Include="fonts\Images\orderedList2.png" />
+    <Content Include="fonts\Images\orderedList3.png" />
+    <Content Include="fonts\Images\orderedList4.png" />
+    <Content Include="fonts\Images\orderedList5.png" />
+    <Content Include="fonts\Images\orderedList6.png" />
+    <Content Include="fonts\Images\orderedList7.png" />
+    <Content Include="fonts\Images\orderedList8.png" />
+    <Content Include="fonts\Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -366,6 +368,10 @@
     <Content Include="Views\Tracking\Index.cshtml" />
     <Content Include="Views\Tracking\Edit.cshtml" />
     <Content Include="Views\Tracking\Delete.cshtml" />
+    <Content Include="Views\Home\Download.cshtml" />
+    <Content Include="Views\Tracking\PrintableVersion.cshtml" />
+    <Content Include="Views\Shared\_LanguagePartial.cshtml" />
+    <Content Include="Views\ControlPanel\UserInformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -384,6 +390,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.ru-RU.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -395,6 +402,10 @@
     <ProjectReference Include="..\ServerDataModel\ServerDataModel.csproj">
       <Project>{cfc63571-0f05-489a-8ad9-5f656d64b2e1}</Project>
       <Name>ServerDataModel %28ServerDataModel\ServerDataModel%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{E6972B8A-ED89-4ED0-ACEF-147E8336FC92}</Project>
+      <Name>Utilities %28Web\Utilities\Utilities%29</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

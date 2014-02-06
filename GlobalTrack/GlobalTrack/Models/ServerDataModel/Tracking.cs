@@ -14,6 +14,9 @@ namespace GlobalTrack.Models.ServerDataModel
         public IEnumerable<SelectListItem> TrackingItems { get; set; }
         [BsonIgnore]
         public IEnumerable<SelectListItem> TrackingItemStates { get; set; }
+        [BsonIgnore]
+        public string TrackingItemName { get; set; }
+
 
     }
 }

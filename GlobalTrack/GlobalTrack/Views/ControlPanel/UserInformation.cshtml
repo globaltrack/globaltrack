@@ -1,0 +1,164 @@
+﻿@model GlobalTrack.Models.Security.User
+
+@{
+    ViewBag.Title = "User Information";
+}
+
+<h2>UserInformation</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>User</legend>
+        
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.UserId)
+        </div>
+        
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.Name)
+        </div>
+        
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.NameLowerSpace)
+        </div>
+        
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.Password)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OrganizationName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OrganizationName)
+            @Html.ValidationMessageFor(model => model.OrganizationName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsOrganization)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsOrganization)
+            @Html.ValidationMessageFor(model => model.IsOrganization)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone1)
+            @Html.ValidationMessageFor(model => model.Phone1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone2)
+            @Html.ValidationMessageFor(model => model.Phone2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone3)
+            @Html.ValidationMessageFor(model => model.Phone3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EnableSubscribersEmailNotifications)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EnableSubscribersEmailNotifications)
+            @Html.ValidationMessageFor(model => model.EnableSubscribersEmailNotifications)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SmtpUserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SmtpUserName)
+            @Html.ValidationMessageFor(model => model.SmtpUserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SmtpPassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SmtpPassword)
+            @Html.ValidationMessageFor(model => model.SmtpPassword)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SmtpServerUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SmtpServerUrl)
+            @Html.ValidationMessageFor(model => model.SmtpServerUrl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SmtpPort)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SmtpPort)
+            @Html.ValidationMessageFor(model => model.SmtpPort)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SmtpHttps)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SmtpHttps)
+            @Html.ValidationMessageFor(model => model.SmtpHttps)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Control Panel", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -70,6 +70,186 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For service providers - we suggest the following:.
+        /// </summary>
+        public static string HomeIndex_ForServiceProviders {
+            get {
+                return ResourceManager.GetString("HomeIndex_ForServiceProviders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For users - we suggest the following:.
+        /// </summary>
+        public static string HomeIndex_ForUsers {
+            get {
+                return ResourceManager.GetString("HomeIndex_ForUsers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Just navigate to the &quot;Track&quot; link in the header menu, enter a valid tracking number and get the status of your deal!.
+        /// </summary>
+        public static string HomeIndex_TrackYourItemsContent {
+            get {
+                return ResourceManager.GetString("HomeIndex_TrackYourItemsContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Track your items.
+        /// </summary>
+        public static string HomeIndex_TrackYourItemsTitle {
+            get {
+                return ResourceManager.GetString("HomeIndex_TrackYourItemsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confugure your environment with defining trackable items. For any trackable item, define the set of additional services, like gelocation, QR-Codes, etc..
+        /// </summary>
+        public static string HomeIndexConfigureEnvContent {
+            get {
+                return ResourceManager.GetString("HomeIndexConfigureEnvContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configure your environment.
+        /// </summary>
+        public static string HomeIndexConfigureEnvTitle {
+            get {
+                return ResourceManager.GetString("HomeIndexConfigureEnvTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See the demo videos how to create your account, configure trackable items and states, share items with your subscribers.
+        /// </summary>
+        public static string HomeIndexGettingStartedContent {
+            get {
+                return ResourceManager.GetString("HomeIndexGettingStartedContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting Started.
+        /// </summary>
+        public static string HomeIndexGettingStartedTitle {
+            get {
+                return ResourceManager.GetString("HomeIndexGettingStartedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn more....
+        /// </summary>
+        public static string HomeIndexLearnMore {
+            get {
+                return ResourceManager.GetString("HomeIndexLearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register at the Golbal Track site. After you register you will be able to create trackings and share them with your subscribers..
+        /// </summary>
+        public static string HomeIndexRegisterContent {
+            get {
+                return ResourceManager.GetString("HomeIndexRegisterContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string HomeIndexRegisterTitle {
+            get {
+                return ResourceManager.GetString("HomeIndexRegisterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start using your trackable items by creating new trackings. Share your trackings with your subscribers allowing them easily track the status of your trackings.
+        /// </summary>
+        public static string HomeIndexShareYourItemsContent {
+            get {
+                return ResourceManager.GetString("HomeIndexShareYourItemsContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share your items with your subscribers.
+        /// </summary>
+        public static string HomeIndexShareYourItemsTitle {
+            get {
+                return ResourceManager.GetString("HomeIndexShareYourItemsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Track.
+        /// </summary>
+        public static string HomeIndexTrack {
+            get {
+                return ResourceManager.GetString("HomeIndexTrack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string MainMenuAbout {
+            get {
+                return ResourceManager.GetString("MainMenuAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string MainMenuContact {
+            get {
+                return ResourceManager.GetString("MainMenuContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Control Panel.
+        /// </summary>
+        public static string MainMenuControlPanel {
+            get {
+                return ResourceManager.GetString("MainMenuControlPanel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download.
+        /// </summary>
+        public static string MainMenuDownload {
+            get {
+                return ResourceManager.GetString("MainMenuDownload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string MainMenuHome {
+            get {
+                return ResourceManager.GetString("MainMenuHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Track.
+        /// </summary>
+        public static string MainMenuTrack {
+            get {
+                return ResourceManager.GetString("MainMenuTrack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
@@ -79,11 +259,76 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Incorrect tracking number. Please verify your input..
+        /// </summary>
+        public static string PublicTrackingController_Index_Incorrect_tracking_number__Please_verify_your_input_ {
+            get {
+                return ResourceManager.GetString("PublicTrackingController_Index_Incorrect_tracking_number__Please_verify_your_inpu" +
+                        "t_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The item with speficied number wasn&apos;t found in our system. Please verify your input..
+        /// </summary>
+        public static string PublicTrackingController_Index_The_item_with_speficied_number_wasn_t_found_in_our_system__Please_verify_your_input_ {
+            get {
+                return ResourceManager.GetString("PublicTrackingController_Index_The_item_with_speficied_number_wasn_t_found_in_our" +
+                        "_system__Please_verify_your_input_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string PublicTrackingIndexNavigateBack {
+            get {
+                return ResourceManager.GetString("PublicTrackingIndexNavigateBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify your tracking number.
+        /// </summary>
+        public static string PublicTrackingIndexPleaseSpecify {
+            get {
+                return ResourceManager.GetString("PublicTrackingIndexPleaseSpecify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Track.
+        /// </summary>
+        public static string PublicTrackingIndexTrackButton {
+            get {
+                return ResourceManager.GetString("PublicTrackingIndexTrackButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Track.
+        /// </summary>
+        public static string PublicTrackingIndexTrackTitle {
+            get {
+                return ResourceManager.GetString("PublicTrackingIndexTrackTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remember me.
         /// </summary>
         public static string RememberMe {
             get {
                 return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Track everythign with the SaaS tracking platform.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
         
