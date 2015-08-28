@@ -1,0 +1,7 @@
+**/*.suo
+**/obj
+**/bin
+**/*.user
+**/*.swp
+**/*.TMP
+/packages
