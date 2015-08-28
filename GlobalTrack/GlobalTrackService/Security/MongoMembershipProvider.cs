@@ -20,11 +20,11 @@ namespace GlobalTrackService.Security
 
         public MongoMembershipProvider()
         {
-            var connectionString = ConfigurationManager.AppSettings["mongoDbServerConnection"]; 
-
+            var connectionString = ConfigurationManager.AppSettings["mongoDbServerConnection"];
+            var dbName = ConfigurationManager.AppSettings["mongoDbName"]; 
             var client = new MongoClient(connectionString);
             var server = client.GetServer();
-            var database = server.GetDatabase("db");
+            var database = server.GetDatabase(dbName);
             _database = database;
             _usersCollection = database.GetCollection<User>("Users"); 
         }

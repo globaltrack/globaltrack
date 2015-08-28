@@ -26,10 +26,11 @@ namespace GlobalTrack.Controllers
 
         public PublicTrackingController()
         {
-            var connectionString = ConfigurationManager.AppSettings["mongoDbServerConnection"]; 
+            var connectionString = ConfigurationManager.AppSettings["mongoDbServerConnection"];
+            var dbName = ConfigurationManager.AppSettings["mongoDbName"]; 
             var client = new MongoClient(connectionString);
             var server = client.GetServer();
-            var database = server.GetDatabase("db");
+            var database = server.GetDatabase(dbName);
             _database = database;
             _trackableItemsCollection = database.GetCollection<TrackableItem>("TrackableItems"); 
             _trackableItemStatesCollection = database.GetCollection<TrackableItemState>("TrackableItemsStates");

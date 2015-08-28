@@ -28,9 +28,10 @@ namespace GlobalTrackService
         public GlobalTrackServicev1()
         {
             connectionString = ConfigurationManager.AppSettings["mongoDbServerConnection"];
+            var dbName = ConfigurationManager.AppSettings["mongoDbName"]; 
             var client = new MongoClient(connectionString);
             var server = client.GetServer();
-            var database = server.GetDatabase("db");
+            var database = server.GetDatabase(dbName);
             _database = database;
             _trackingCollection = database.GetCollection<ServerDataModel.Tracking>("Trackings");
             _trackableItemsCollection = database.GetCollection<ServerDataModel.TrackableItem>("TrackableItems"); 
