@@ -344,9 +344,9 @@
 		<row><td>ClientDataModel.Primary_output1</td><td>{465B422F-FD9D-4D79-97C0-6F0B4B812210}</td><td>INSTALLDIR</td><td>2</td><td/><td>clientdatamodel.primary_outp</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>GlobalTrackDesktop.Primary_output</td><td>{5BA01550-8D05-453A-A938-8FA1258BA479}</td><td>INSTALLDIR</td><td>2</td><td/><td>globaltrackdesktop.primary_o</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>GlobalTrackDesktop.Primary_output1</td><td>{DC8FCF07-74B6-4FDF-ABAD-3560102B452A}</td><td>INSTALLDIR</td><td>2</td><td/><td>globaltrackdesktop.primary_o</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>MahApps.Metro.Resources.dll</td><td>{9A4218FA-5591-4839-B1C4-618CFD29323D}</td><td>INSTALLDIR</td><td>2</td><td/><td>mahapps.metro.resources.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>MahApps.Metro.dll</td><td>{4EFE3C48-3FF9-478B-8AB5-6BD8FDAAF32C}</td><td>INSTALLDIR</td><td>2</td><td/><td>mahapps.metro.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>System.Windows.Interactivity.dll</td><td>{3C510211-8AD1-4908-8321-31EC78FEB48B}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.windows.interactivity</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>MahApps.Metro.Resources.dll</td><td>{A6732BDE-578D-4076-8B81-D30FB9654118}</td><td>INSTALLDIR</td><td>2</td><td/><td>mahapps.metro.resources.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>MahApps.Metro.dll</td><td>{3F89F7BD-0BA2-4DB0-A472-DF316FE7DC23}</td><td>INSTALLDIR</td><td>2</td><td/><td>mahapps.metro.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>System.Windows.Interactivity.dll</td><td>{3F18A1C3-9D41-4029-8C45-9280A5849BB8}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.windows.interactivity</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1055,6 +1055,9 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>INSTALLDIR</td><td>MahApps.Metro.Resources.dll</td></row>
+		<row><td>INSTALLDIR</td><td>MahApps.Metro.dll</td></row>
+		<row><td>INSTALLDIR</td><td>System.Windows.Interactivity.dll</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1890,9 +1893,9 @@
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>clientdatamodel.primary_outp</td><td>ClientDataModel.Primary_output1</td><td>ClientDataModel.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ClientDataModel&gt;|Built</td><td>3</td><td/></row>
 		<row><td>globaltrackdesktop.primary_o</td><td>GlobalTrackDesktop.Primary_output1</td><td>GlobalTrackDesktop.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;GlobalTrackDesktop&gt;|Built</td><td>3</td><td/></row>
-		<row><td>mahapps.metro.dll</td><td>MahApps.Metro.dll</td><td>MAHAPP~1.DLL|MahApps.Metro.dll</td><td>0</td><td/><td/><td/><td>1</td><td>F:\dev\UnOfficial\GlobalTrack\GlobalTrack\GlobalTrackDesktop\Lib\MahApps.Metro.dll</td><td>1</td><td/></row>
-		<row><td>mahapps.metro.resources.dll</td><td>MahApps.Metro.Resources.dll</td><td>MAHAPP~1.DLL|MahApps.Metro.Resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>F:\dev\UnOfficial\GlobalTrack\GlobalTrack\GlobalTrackDesktop\Lib\MahApps.Metro.Resources.dll</td><td>1</td><td/></row>
-		<row><td>system.windows.interactivity</td><td>System.Windows.Interactivity.dll</td><td>SYSTEM~1.DLL|System.Windows.Interactivity.dll</td><td>0</td><td/><td/><td/><td>1</td><td>F:\dev\UnOfficial\GlobalTrack\GlobalTrack\GlobalTrackDesktop\Lib\System.Windows.Interactivity.dll</td><td>1</td><td/></row>
+		<row><td>mahapps.metro.dll</td><td>MahApps.Metro.dll</td><td>MAHAPP~1.DLL|MahApps.Metro.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Private\GlobalTrack\Git\globaltrack\GlobalTrack\GlobalTrackDesktop\Lib\MahApps.Metro.dll</td><td>1</td><td/></row>
+		<row><td>mahapps.metro.resources.dll</td><td>MahApps.Metro.Resources.dll</td><td>MAHAPP~1.DLL|MahApps.Metro.Resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Private\GlobalTrack\Git\globaltrack\GlobalTrack\GlobalTrackDesktop\Lib\MahApps.Metro.Resources.dll</td><td>1</td><td/></row>
+		<row><td>system.windows.interactivity</td><td>System.Windows.Interactivity.dll</td><td>SYSTEM~1.DLL|System.Windows.Interactivity.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Private\GlobalTrack\Git\globaltrack\GlobalTrack\GlobalTrackDesktop\Lib\System.Windows.Interactivity.dll</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2040,9 +2043,9 @@
 		<row><td>ClientDataModel.Primary_output1</td><td/><td/><td>_50115F2D_5FFE_44F9_83ED_12DB08ADD442_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>GlobalTrackDesktop.Primary_output</td><td/><td/><td>_0D125C7A_4F6B_4D60_A856_9149A5644223_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>GlobalTrackDesktop.Primary_output1</td><td/><td/><td>_B7F92158_20CC_4933_AED5_0E6730B51F87_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>MahApps.Metro.Resources.dll</td><td/><td/><td>_EC18328F_AF33_4934_A579_FB93A7B8519F_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>MahApps.Metro.dll</td><td/><td/><td>_F9F1E366_D431_4B87_98F2_0DC5A8CA884E_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>System.Windows.Interactivity.dll</td><td/><td/><td>_E11D145D_ABDD_464C_AC78_15A1D77C2B8B_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>MahApps.Metro.Resources.dll</td><td/><td/><td>_1DB56BD8_A2E6_4C22_ADE6_53AC8FFBB1D3_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>MahApps.Metro.dll</td><td/><td/><td>_F6CE6CE3_D993_4E28_B4CC_0124DF7465AC_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>System.Windows.Interactivity.dll</td><td/><td/><td>_ED2A239F_FC64_4691_AD51_6C3F01EAA4BE_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">

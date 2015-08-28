@@ -28,7 +28,7 @@ namespace GlobalTrackDesktop.UI
         private void OnLogin(object sender, RoutedEventArgs e)
         {
             GlobalTrackService.GlobalTrackServicev1Client client = new GlobalTrackServicev1Client();
-            var loginInfo =  client.Login(TbUser.Text, TbPassword.Text);
+            var loginInfo =  client.Login(TbUser.Text.ToLower(), TbPassword.Text);
             if (string.IsNullOrEmpty(loginInfo.SessionId))
             {
                 MessageBox.Show(loginInfo.ErrorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error); 
@@ -38,7 +38,7 @@ namespace GlobalTrackDesktop.UI
                 UserContext.Service = client; 
                 UserContext.Session = loginInfo.SessionId;
                 UserContext.Password = TbPassword.Text;
-                UserContext.UserName = TbUser.Text; 
+                UserContext.UserName = TbUser.Text.ToLower(); 
                 this.Close();
             }
         }

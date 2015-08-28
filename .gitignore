@@ -1,7 +1,16 @@
 **/*.suo
+
 **/obj
+
 **/bin
+
 **/*.user
+
 **/*.swp
+
 **/*.TMP
+
 /packages
+**/LogFiles
+**/Reports
+**/DISK1/setup.exe
