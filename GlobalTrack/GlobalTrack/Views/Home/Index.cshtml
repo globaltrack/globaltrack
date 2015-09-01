@@ -1,49 +1,55 @@
 ﻿@{
     ViewBag.Title = "Global Track";
-    
 }
 @using Resources
 @section featured {
     <section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@Resource.Title</h2>
+                @*<h1>@ViewBag.Title.</h1>*@
+                @*<h2>@Resource.Title</h2>*@
             </hgroup>
         </div>
     </section>
 }
+
+@*<ul class="list">
+    <li><strong><a href="#">Welcome To our Company</a></strong>If you are looking for perfect IT services for your business, you will find them here!</li>
+    <li><strong><a href="#">Our services</a></strong>The complete information regarding our services you will find on the "Service" page.</li>
+    <li><strong><a href="#">About IT Technologies Website</a></strong>Free 1028X768 Optimized Website Template from Templates.com! We hope that you will like this template and use for your websites.</li>
+</ul>*@
+
 <h3>@Resource.HomeIndex_ForUsers</h3>
-<ol class="round">
-    <li class="one">
-        <h5>@Resource.HomeIndex_TrackYourItemsTitle</h5>
-        @Resource.HomeIndex_TrackYourItemsContent
-        @Html.ActionLink(@Resource.HomeIndexTrack, "Index", "PublicTracking") 
-    </li>
-</ol>
+
+ <strong>@Resource.HomeIndex_TrackYourItemsTitle</strong>
+        <p>@Resource.HomeIndex_TrackYourItemsContent
+        @Html.ActionLink(@Resource.HomeIndexTrack, "Index", "PublicTracking")</p>
 
 <h3>@Resource.HomeIndex_ForServiceProviders</h3>
-<ol class="round">
-    <li class="one">
-        <h5>@Resource.HomeIndexGettingStartedTitle</h5>
-        @Resource.HomeIndexGettingStartedContent
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">@Resource.HomeIndexLearnMore</a>
-    </li>
 
-    <li class="two">
-        <h5>@Resource.HomeIndexRegisterTitle</h5>
-        @Resource.HomeIndexRegisterContent
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">@Resource.HomeIndexLearnMore</a>
-    </li>
 
-    <li class="three">
-        <h5>@Resource.HomeIndexConfigureEnvTitle</h5>
-        @Resource.HomeIndexConfigureEnvContent
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">@Resource.HomeIndexLearnMore</a>
-    </li>
-    <li class="four">
-        <h5>@Resource.HomeIndexShareYourItemsTitle</h5>
-        @Resource.HomeIndexShareYourItemsContent
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">@Resource.HomeIndexLearnMore</a>
-    </li>
-</ol>
+        <strong>@Resource.HomeIndexGettingStartedTitle</strong>
+        <p>
+    @Resource.HomeIndexGettingStartedContent
+    <a href="http://go.microsoft.com/fwlink/?LinkId=245151">@Resource.HomeIndexLearnMore</a>
+</p>
+
+
+
+        <strong>@Resource.HomeIndexRegisterTitle</strong>
+       <p>
+    @Resource.HomeIndexRegisterContent
+    <a href="http://go.microsoft.com/fwlink/?LinkId=245153">@Resource.HomeIndexLearnMore</a>
+</p>
+
+    <strong>@Resource.HomeIndexConfigureEnvTitle</strong>
+    <p>
+    @Resource.HomeIndexConfigureEnvContent
+    <a href="http://go.microsoft.com/fwlink/?LinkId=245157">@Resource.HomeIndexLearnMore</a>
+</p>
+
+    <strong>@Resource.HomeIndexShareYourItemsTitle</strong>
+    <p>
+    @Resource.HomeIndexShareYourItemsContent
+    <a href="http://go.microsoft.com/fwlink/?LinkId=245157">@Resource.HomeIndexLearnMore</a>
+</p>

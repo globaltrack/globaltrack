@@ -14,20 +14,28 @@
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("Global Track - track everything", "Index", "Home")</p>
                 </div>
+
                 <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink(@Resources.Resource.MainMenuHome, "Index", "Home")</li>
-                            <li>@Html.ActionLink(@Resources.Resource.MainMenuTrack, "Index", "PublicTracking")</li>
-                            <li>@Html.ActionLink(@Resources.Resource.MainMenuControlPanel, "Index", "ControlPanel")</li>
-                            <li>@Html.ActionLink(@Resources.Resource.MainMenuDownload, "Download", "Home")</li>
-                            <li>@Html.ActionLink(@Resources.Resource.MainMenuAbout, "About", "Home")</li>
-                            <li>@Html.ActionLink(@Resources.Resource.MainMenuContact, "Contact", "Home")</li>
-                        </ul>
-                    </nav>
+                    <table >
+                        <tr>
+                            <td vertical-align="top"><section id="language1" align="right" padding-bottom="10">@Html.Partial("_LanguagePartial")</section></td>
+                            <td><section id="login">@Html.Partial("_LoginPartial")</section></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <nav>
+                                    <ul id="menu">
+                                        <li>@Html.ActionLink(@Resources.Resource.MainMenuHome, "Index", "Home")</li>
+                                        <li>@Html.ActionLink(@Resources.Resource.MainMenuTrack, "Index", "PublicTracking")</li>
+                                        <li>@Html.ActionLink(@Resources.Resource.MainMenuControlPanel, "Index", "ControlPanel")</li>
+                                        <li>@Html.ActionLink(@Resources.Resource.MainMenuDownload, "Download", "Home")</li>
+                                        <li>@Html.ActionLink(@Resources.Resource.MainMenuAbout, "About", "Home")</li>
+                                        <li>@Html.ActionLink(@Resources.Resource.MainMenuContact, "Contact", "Home")</li>
+                                    </ul>
+                                </nav>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div>
@@ -42,6 +50,8 @@
                     </select>
                 }
                 *@
+                
+
             </div>
         </header>
         <div id="body">

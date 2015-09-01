@@ -16,7 +16,7 @@
 
     <fieldset>
         <legend>Log in Form</legend>
-        <ol>
+        @*<ul style="list-style: none;">
             <li>
                 @Html.LabelFor(m => m.UserName)
                 @Html.TextBoxFor(m => m.UserName)
@@ -31,7 +31,26 @@
                 @Html.CheckBoxFor(m => m.RememberMe)
                 @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
             </li>
-        </ol>
+        </ul>*@
+        <table>
+            <tr>
+                <td>@Html.LabelFor(m => m.UserName)</td>
+                <td>@Html.TextBoxFor(m => m.UserName)</td>
+                <td>@Html.ValidationMessageFor(m => m.UserName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.Password)</td>
+                <td>@Html.PasswordFor(m => m.Password)</td>
+                <td>@Html.ValidationMessageFor(m => m.Password)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })</td>
+                <td>@Html.CheckBoxFor(m => m.RememberMe)</td>
+                <td></td>
+            </tr>
+
+
+        </table>
         <input type="submit" value="Log in" />
     </fieldset>
     <p>

@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>Global &middot; Track - a free tracking-as-a-service platform</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <!--<link href="~/default.css" rel="stylesheet" type="text/css" />-->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+<!-- ########################## CONTENT PART ########################## -->
+<div id="contentWrapper">
+    <div class="dimensions showoverflow bgwhite">
+        <div class="leftContent">
+            <div id="body">
+                <h2>Global Track / a free tracking platform </h2>
+                @RenderSection("featured", required: false)
+                <section class="content-wrapper main-content clear-fix">
+                    @RenderBody()
+                </section>
+            </div>
+        </div>
+        <div class="rightContent">
+            <div class="contentBox">
+                <h5>Account</h5>
+                <!--<section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>-->
+                @Html.Partial("_LoginPartial")
+            </div>
+            <!--<div class="contentBox">
+                <h5>perfect for your business</h5>
+                <p>
+                    the &bdquo;blue cargo&rdquo; template is based on our
+                    template &bdquo;<a href="http://www.openwebdesign.org/viewdesign.phtml?id=5563&referer=%2Fuserinfo.phtml%3Fuser%3Dmediatacweb">coffee&amp;cream</a>&rdquo; - as requested i’ve
+                    made this popular template available in blue :)
+                </p>
+            </div>
+
+            <div class="contentBox">
+                <h5>air &amp; sea cargo services</h5>
+                <p>
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                    mus. Sed feugiat porttitor semper. Morbi sed vestibulum eros. Integer ullamcorper tincidunt commodo.
+                </p>
+            </div>-->
+
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+</div>
+
+
+
+<!-- ########################## FOOTER PART ########################## -->
+
+<div id="footerWrapper">
+   <div class="dimensions showoverflow">
+     <div id="footerLeft">
+        <h6>About blue cargo services</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Mauris magna velit, scelerisque id pulvinar in, semper at ipsum.
+        Sed eros massa, porta a rutrum non, vehicula ut nisi. Vestibulum
+        ante ipsum primis in faucibus orci luctus et ultrices posuere
+        cubilia Curae; Duis porta ipsum a eros molestie ac sodales urna
+        fermentum. Nulla tincidunt augue at lectus congue tristique. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Sed at eros tellus. Pellentesque habitant morbi tristique
+        senectus et netus et malesuada fames ac turpis egestas. Quisque
+        sagittis urna elit. Quisque aliquet, felis in aliquet vulputate,
+        enim erat fermentum turpis, id tempor mi quam vel diam.</p>
+     </div>
+     <div id="footerMiddle">
+        <h6>Contact us</h6>
+        <div class="dark">
+        <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+        <td valign="top"><img src="/Content/tmpl_bluecargo/gfx/icon_phone.png" alt="" style="margin-right: 10px;" /></td>
+        <td>by Phone: ++46 70 813 9459<br />
+        by Mail: alexey.dubovenko@gmail.com<br />
+        Global &middot; Track services ltd.<br  />
+        Harbour Blvd. 658<br />
+        Los Angeles</td>
+        </tr>
+        </table>
+        </div>
+        <h6>you can call us:</h6>
+        <p class="dark">Monday - Tuesday 09:30 - 20:00<br />
+        Friday 09:00 - 18:00<br />
+        Saturday 09:00 - 14:00</p>
+     </div>
+     <div id="footerRight">
+        <h6>Partners</h6>
+        <p>Here's some space to list your partners<br />
+        &middot; <a href="#">Pizza for Everubody co</a><br />
+        &middot; <a href="#">Taxi service "Crazy driver"</a><br />
+        &middot; <a href="#">Boring govermental organization</a><br />
+        </p>
+        <h6>Design &amp; Sponsors</h6>
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        you're not allowed to use this template free of charge if you remove or modify the following lines... see licence(.txt)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        template design<br />
+        <a href="http://www.mediatac.com/">mediatac.com &middot; n&uuml;rnberg &middot; germany</a><br />
+        template sponsored by<br />
+        <a href="http://www.edelwerk-shop.de/">schmuck online</a> &amp; <a href="http://www.ego-surf.net/">kostenlose templates</a>
+         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         from here, do what you want, again... keep in mind, that removing and/or modifing lines above is illegal - do not expect i won't find you ;)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+         <section id="language1" align="right" padding-bottom="10">
+             @Html.Partial("_LanguagePartial")
+         </section>
+     </div>
+   </div>
+</div>
+
+<!-- ########################## HEADER PART ########################## -->
+<div id="header">
+  <div class="dimensions">
+  <div id="logo">
+      <img src="/Content/tmpl_bluecargo/gfx/companyLogo.png" alt="" />
+  <h1>Global &middot; Track</h1>
+  <h6>a free tracking-as-a-service platform</h6>
+  </div>
+  <div id="navigationTop">
+    <ul>
+      <!--<li><a href="#">home</a></li>-->
+      <!--<li><a href="#" class="active">air freight</a></li>-->
+      <li><!--<a href="#">sea freight</a>--></li>
+      <li><!--<a href="#">how to find us</a>--></li>
+        <li><!--<a href="#">special services</a>--></li>
+        <li>@Html.ActionLink(@Resources.Resource.MainMenuHome, "Index", "Home")</li>
+        <li>@Html.ActionLink(@Resources.Resource.MainMenuTrack, "Index", "PublicTracking")</li>
+        <li>@Html.ActionLink(@Resources.Resource.MainMenuControlPanel, "Index", "ControlPanel")</li>
+        <li>@Html.ActionLink(@Resources.Resource.MainMenuDownload, "Download", "Home")</li>
+        <li>@Html.ActionLink(@Resources.Resource.MainMenuAbout, "About", "Home")</li>
+        <li>@Html.ActionLink(@Resources.Resource.MainMenuContact, "Contact", "Home")</li>
+       
+    </ul>
+  </div>
+  </div>
+</div>
+<div id="linebelownav"></div>
+
+<div id="topImage">
+  <div class="dimensions">
+  <div id="slogan">
+  <p><br />The Global Track is a free tracking plaform. Using the provided APIs and variety of desktop and mobile clients you may integrate this platform into your existing solutions easily.</p>
+  </div>
+  <div id="decorationImage"><img src="/Content/tmpl_bluecargo/gfx/Containers.jpg" alt="" /></div>
+  </div>
+</div>
+<div id="linebelowdecoration"></div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    <!--стили jquery ui-->
+    @Styles.Render("~/Content/themes/base/css")
+    <!--сама библиотека jquey ui-->
+    @Scripts.Render("~/bundles/jqueryui")
+
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+            $(document).ready(function() {
+                $("#startDate").datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    showOn: 'both',
+                    buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+                    buttonImageOnly: true,
+                    showmonth: true,
+                    autoSize: true,
+                    showAnim: 'slideDown',
+                    duration: 'fast'
+                });
+            });
+            $(document).ready(function () {
+                $("#endDate").datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    showOn: 'both',
+                    buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+                    buttonImageOnly: true,
+                    showmonth: true,
+                    autoSize: true,
+                    showAnim: 'slideDown',
+                    duration: 'fast'
+                });
+            });
+    </script>
+    <link href="@Url.Content(" ~=~ />Scripts/fancybox/jquery.fancybox.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="@Url.Content(" ~=~ />Scripts/fancybox/jquery.fancybox.pack.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $("#divForm").fancybox();
+    });
+    </script>     
+
+
+
+
+</body>
+
+</html>
