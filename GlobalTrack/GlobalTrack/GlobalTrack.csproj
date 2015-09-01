@@ -304,7 +304,7 @@
     <Content Include="Content\tmpl_bluecargo\gfx\companyLogo.png" />
     <Content Include="Content\tmpl_bluecargo\gfx\Containers.jpg" />
     <Content Include="Content\tmpl_bluecargo\gfx\icon_phone.png" />
-    <None Include="Views\Shared\_LayoutBlue.cshtml" />
+    <Content Include="Views\Shared\_LayoutBlue.cshtml" />
     <Content Include="Content\tmpl_bluecargo\LICENSE.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
