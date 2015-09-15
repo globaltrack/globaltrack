@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Services.Common;
 using System.Runtime.Serialization;
 
 namespace ClientDataModel
 {
     [DataContract]
+    [DataServiceKey("Id")]
+    [DataServiceEntity]
     public class Tracking
     {
         

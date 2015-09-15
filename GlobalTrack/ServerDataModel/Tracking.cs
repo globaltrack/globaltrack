@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-
+using System.Data.Services.Common;
+using System.Linq;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace ServerDataModel
 {
-    public class Tracking
+    [DataServiceKey("Id")]
+    [DataServiceEntity]
+    public class Tracking: IConvertToClientData
     {
         public void Traсking()
         {
@@ -48,5 +51,22 @@ namespace ServerDataModel
         public string Password { get; set; }
 
 
+
+        public T ToClientData<T>() where T : class
+        {
+            var t = new ClientDataModel.Tracking();
+
+            t.Comment = this.Comment;
+            t.CreatedDate = this.CreatedDate;
+            //t.History = this.History; 
+            t.Id = this.Id.ToString();
+            t.StateId = this.StateId.ToString();
+            t.StateName = "NO STATE NAME";
+            t.TrackingItemId = this.TrackingItemId.ToString();
+            t.TrackingItemName = "NO TRACKING ITEM NAME";
+            t.User = this.User; 
+            t.History = History.Select( h => h.ToClientData<ClientDataModel.TrackingHistoryRecord>()).ToList();
+            return t as T; 
+        }
     }
 }

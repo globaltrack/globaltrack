@@ -11,6 +11,8 @@ namespace ClientDataModel
         [DataMember]
         public string StateId { get; set; }
         [DataMember]
+        public string StateName { get; set; }
+        [DataMember]
         public string Comment { get; set; }
         [DataMember]
         public decimal Latitude { get; set; }
